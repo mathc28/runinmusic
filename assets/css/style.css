@@ -299,8 +299,7 @@ nav a:hover {
   /* Hero responsive */
   .hero {
     height: auto;
-    min-height: 80vh;
-    padding: 40px 20px;
+    min-height: 100svh;
   }
 
   .hero h1 {
