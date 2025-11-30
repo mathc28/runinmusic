@@ -1,0 +1,671 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+main{
+  width: 100%;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 10px 0px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+    
+header img {
+  max-width: 100%;
+}
+
+.hero {
+  width: 100%;
+  height: calc(100vh - 80px);
+  
+  /* --- CHANGEMENT ICI --- */
+  /* On superpose un dégradé noir sur l'image */
+  background: 
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2), /* En haut : peu opaque (20%) pour garder la clarté */
+      rgba(0, 0, 0, 0.7)  /* En bas : très opaque (70%) pour faire ressortir le texte */
+    ),
+    url("/assets/images/hero.jpeg") center/cover no-repeat;
+  /* ---------------------- */
+
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+}
+
+.cta {
+  background: linear-gradient(90deg, #0066ff 0%, #9b35ff 50%, #ff6600 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1.6;
+  
+  /* Mise en page simple */
+  max-width: 1000px;
+  margin: 40px auto; /* Marge réduite pour rester groupé */
+  
+  /* --- CHANGEMENT ICI --- */
+  /* Plus de background ni de border. Juste une ombre forte sur les lettres */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); 
+}
+
+.hero p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1.6;
+  
+  /* Mise en page simple */
+  max-width: 1000px;
+  margin: 40px auto; /* Marge réduite pour rester groupé */
+  
+  /* --- CHANGEMENT ICI --- */
+  /* Plus de background ni de border. Juste une ombre forte sur les lettres */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); 
+}
+
+#countdown {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Dégradé continu partagé entre les blocs */
+.count-block {
+  padding: 20px 30px;
+  border-radius: 25px;
+  min-width: 140px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(90deg, #0066ff 0%, #9b35ff 50%, #ff6600 100%);
+  background-size: 400% 100%; /* 4 blocs = 400% */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.count-block:nth-child(1) {
+  background-position: 0% 0%;
+}
+
+.count-block:nth-child(2) {
+  background-position: 33% 0%;
+}
+
+.count-block:nth-child(3) {
+  background-position: 66% 0%;
+}
+
+.count-block:nth-child(4) {
+  background-position: 100% 0%;
+}
+
+.count-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.count-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  color: #fff;
+}
+
+
+/* --- SECTION CONCEPT (DESKTOP FIRST) --- */
+
+/* 1. STYLE PAR DÉFAUT (GRANDS ÉCRANS) : CÔTE À CÔTE */
+.concept {
+  padding-top: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Chaque bloc (Texte + Image) est une ligne Flex par défaut */
+.concept-block {
+  display: flex;
+  flex-direction: row; /* Desktop: Texte et image côte à côte */
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* Inverse l'ordre pour les blocs marqués .reverse (Image à gauche, Texte à droite) */
+.concept-block.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Conteneur de Texte */
+.concept-text {
+  flex: 1; /* Prend une part de l'espace */
+  text-align: left; /* Aligné à gauche par défaut (Desktop) */
+  padding: 20px 0;
+}
+
+.concept-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #0066ff 0%, #9b35ff 50%, #ff6600 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.concept-text p {
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Conteneur de l'Image */
+.concept-image {
+  flex: 1; /* Prend une part de l'espace */
+  width: auto;
+  max-width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.concept-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* --- MEDIA QUERY : ADAPTATION VERS LE MOBILE (MAX-WIDTH) --- */
+
+@media (max-width: 991px) { /* Pour les tablettes et mobiles */
+  
+  .concept-block {
+    flex-direction: column; /* Mobile : Image sous le texte (empilé) */
+    align-items: center; /* Centre les éléments */
+    gap: 20px;
+  }
+  
+  /* On annule l'inversion pour les mobiles : tout est en colonne */
+  .concept-block.reverse {
+    flex-direction: column; 
+  }
+
+  .concept-text {
+    width: 90%; /* Limite la largeur du texte pour la lecture */
+    text-align: center; /* Centre le texte sur mobile */
+    padding: 0;
+  }
+  
+  .concept-image {
+    width: 90%; /* Limite la largeur de l'image */
+  }
+}
+
+/* --- SECTION COURSES --- */
+.courses {
+    padding: 16px 0;
+    text-align: center;
+    background-color: #f4f4f9; /* Fond léger pour séparer la section */
+}
+
+.courses h2 {
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #0066ff 0%, #9b35ff 50%, #ff6600 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.course-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 1. STYLE PAR DÉFAUT (GRANDS ÉCRANS) : CÔTE À CÔTE */
+
+.course-detail {
+    display: flex;
+    flex-direction: row; /* Desktop First: Texte à gauche, Média à droite par défaut */
+    gap: 40px;
+    margin-bottom: 80px;
+    align-items: stretch; /* Assure que les colonnes ont la même hauteur */
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+.course-detail.reverse {
+    flex-direction: row-reverse; /* Image à gauche, Texte à droite */
+}
+
+.course-text-content {
+    flex: 1; /* Prend 50% de l'espace */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pour pousser le bouton en bas */
+}
+
+.course-text-content h3 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #0066ff 0%, #9b35ff 50%, #ff6600 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.course-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.course-media {
+    flex: 1; /* Prend 50% de l'espace */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Conteneur de Vidéo (Responsive 16:9) */
+.video-container {
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- Style du Bloc d'Information (Réutilisé de la modale) --- */
+.inforun {
+    background-color: #fafafa;
+    border-radius: 8px;
+    padding: 15px;
+    border-left: 5px solid #6B3CFF;
+    margin-bottom: 20px;
+}
+
+.inforun h4 {
+    margin: 0 0 15px 0;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+
+.inforun ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.inforun li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    border-bottom: 1px dashed #e0e0e0;
+    padding-bottom: 4px;
+}
+
+.inforun li:last-child {
+  border-bottom: none;
+  margin-bottom: 20px;
+}
+
+.inforun li strong {
+    color: #222;
+    font-weight: 600;
+}
+
+.inforun li span {
+    color: #555;
+    text-align: right;
+}
+
+/* Bouton CTA spécifique à la carte */
+.cta-small {
+  background: linear-gradient(90deg, #0066ff 0%, #9b35ff 50%, #ff6600 100%);
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: background-color 0.3s;
+  font-size: 0.95rem;
+}
+
+.cta-small:hover {
+    background-color: #b82a6f;
+}
+
+
+/* 2. MEDIA QUERY : ADAPTATION VERS LE MOBILE (MAX-WIDTH) */
+
+@media (max-width: 991px) {
+    .course-detail {
+        flex-direction: column; /* Mobile : Image sous le texte (empilé) */
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    /* On annule l'inversion pour les mobiles */
+    .course-detail.reverse {
+        flex-direction: column; 
+    }
+
+    .course-text-content {
+        order: 2; /* Met le texte sous la vidéo sur mobile */
+        text-align: center;
+    }
+    
+    .course-media {
+        order: 1; /* Met la vidéo en premier sur mobile */
+    }
+
+    .course-text-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+  .courses {
+    padding: 40px 0;
+  }
+  .courses h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+}
+
+
+/* --- SECTION PRE-INSCRIPTION --- */
+#preinscription {
+  width: 100%;
+  padding: 40px 0px;
+  text-align: center;
+}
+
+#preinscription h2 {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #0066ff 0%, #9b35ff 50%, #ff6600 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.preinscription-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background: #fcfcfc;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left; /* Aligne le contenu du groupe à gauche */
+}
+
+.form-group input{
+  box-sizing: border-box;
+}
+
+/* Style commun pour les inputs et le select */
+  .preinscription-form input[type="text"],
+  .preinscription-form input[type="email"],
+  .preinscription-form input[type="tel"], /* Ajout du style pour le type tel */
+  .preinscription-form select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    color: #444;
+}
+
+        .preinscription-form input:focus,
+        .preinscription-form select:focus {
+            border-color: #d63384; 
+            box-shadow: 0 0 0 3px rgba(214, 51, 132, 0.2);
+            outline: none;
+        }
+
+        /* Style spécifique pour le select pour simuler une flèche (SVG encodé) */
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23666'%3E%3Cpath d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            background-size: 16px;
+        }
+
+        /* --- STYLE DU MESSAGE DE FORMULAIRE --- */
+        .form-message {
+            margin-top: 20px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 0.95rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .form-message.error {
+            background-color: #fce8e8;
+            color: #cc0000;
+            border: 1px solid #cc0000;
+            opacity: 1; 
+        }
+
+        .form-message.success {
+            background-color: #e8fce8;
+            color: #008800;
+            border: 1px solid #008800;
+            opacity: 1;
+        }
+
+        /* --- MOBILE ADAPTATION --- */
+        @media (max-width: 576px) {
+            #preinscription {
+                padding: 40px 10px;
+            }
+            .preinscription-form {
+                max-width: 95%;
+                padding: 20px;
+            }
+            .subtitle {
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+        }
+ 
+/* --- FOOTER (Desktop First) --- */
+/* --- FOOTER GLOBAL --- */
+.footer {
+    /* Couleur de fond principale sombre */
+    background-color: #f4f4f9; /* Gris Charbon (Couleur principale de l'Option 6) */
+    color: black; /* Texte très clair */
+    padding: 30px 0 0; /* Marge interne haute, pas de marge basse initialement */
+    font-family: Arial, sans-serif; /* Assurez-vous d'utiliser votre police de site */
+    width: 100%;
+}
+
+/* --- SECTION PRINCIPALE (LOGO, LIENS, SOCIAL) --- */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Adaptez à la largeur maximale de votre site */
+    margin: 0 auto;
+    padding: 0 20px 20px;
+    border-bottom: 2px solid #3498db; /* Ligne de séparation colorée (Accent Bleu) */
+    margin-bottom: 20px;
+}
+
+/* --- LOGO --- */
+.footer-logo img {
+    /* Le logo a probablement déjà une version blanche/claire pour le fond sombre */
+    filter: brightness(1.5); /* Optionnel : pour éclaircir le logo si nécessaire */
+    max-height: 50px; /* Ajustez la taille du logo */
+}
+
+/* --- LIENS DE NAVIGATION --- */
+.footer-links a {
+    color: black;
+    text-decoration: none;
+    margin-right: 25px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #3498db; /* Utilisation de la couleur d'accent au survol */
+}
+
+/* --- RÉSEAUX SOCIAUX --- */
+.footer-social {
+    text-align: right;
+}
+
+.footer-social p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: block;
+    width: 30px; /* Taille des icônes */
+    height: 30px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px; /* Optionnel : pour un look plus doux */
+    transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+/* 📌 COULEURS D'ORIGINE des Logos de Réseaux Sociaux */
+/* Utilisez des icônes SVG ou des polices d'icônes (comme FontAwesome) pour un meilleur rendu.
+   Si vous utilisez des images (background-image), assurez-vous qu'elles sont les logos officiels colorés. */
+
+.social-icons .fb {
+    background-color: #3b5998; /* Facebook Blue */
+    /* Si vous utilisez une image, remplacez background-color par background-image: url('chemin/vers/facebook-logo-white.svg'); */
+}
+
+.social-icons .ig {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); /* Instagram Gradient */
+}
+
+.social-icons .tw {
+    background-color: #1da1f2; /* Twitter Blue */
+}
+
+/* --- SECTION COPYRIGHT (bas) --- */
+.footer-bottom {
+    text-align: center;
+    padding: 15px 20px;
+    /* La couleur de fond est héritée de .footer, donc elle reste sombre */
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo, .footer-links, .footer-social {
+        margin-bottom: 20px;
+    }
+
+    .footer-links a {
+        margin: 0 10px;
+    }
+
+    .footer-social p {
+        margin-top: 15px;
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center; /* Centrer les icônes en mode mobile */
+    }
+}

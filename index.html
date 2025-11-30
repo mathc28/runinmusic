@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Run In Music – Maquette</title>    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="/assets/js/modal.js" defer></script>
+
+  </head>
+  <body>
+    <header>
+      <img src="/assets/images/logo.png" alt="Logo Run In Music" style="height:60px;" />
+      <nav>
+        <a href="#infos" style="margin:0 15px; text-decoration:none; color:#444; font-weight:600;">Les courses</a>
+        <a href="#infos" style="margin:0 15px; text-decoration:none; color:#444; font-weight:600;">Infos</a>
+        <a  class="cta"  href="#preinscription" style="margin:0 15px; text-decoration:none; font-weight:600;">Pré-inscription</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <h1 class="title">Courir. Vibrer. Danser.</h1>
+        <p>
+          Participez à une expérience unique : une course à pied de 10 km rythmée par des ambiances musicales et un grand concert final.
+        </p>
+        <div id="countdown">
+          <div class="count-block">
+            <div class="count-number" id="cd-days">0</div>
+            <div class="count-label">Jours</div>
+          </div>
+          <div class="count-block">
+            <div class="count-number" id="cd-hours">0</div>
+            <div class="count-label">Heures</div>
+          </div>
+          <div class="count-block">
+            <div class="count-number" id="cd-minutes">0</div>
+            <div class="count-label">Min</div>
+          </div>
+          <div class="count-block">
+            <div class="count-number" id="cd-seconds">0</div>
+            <div class="count-label">Sec</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="concept">
+  
+        <div class="concept-block">
+          <div class="concept-text">
+            <h2>Pourquoi Run In Music ?</h2>
+            <p>
+              Run In Music est né d’une idée simple : transformer une course à pied en une expérience émotionnelle, où chaque foulée est guidée par la musique.
+              Nous voulions créer un événement qui mélange le plaisir du sport, l’énergie d’un festival, et la magie des ambiances musicales réparties tout au long du parcours.
+            </p>
+          </div>
+          <div class="concept-image">
+            <img src="/assets/images/Gemini_Generated_Image_cu8gglcu8gglcu8g.png" alt="Vue d'ensemble de la course">
+          </div>
+        </div>
+
+        <div class="concept-block reverse">
+          <div class="concept-text">
+            <h2>Le concept</h2>
+            <p>
+              Run In Music est né d’une idée simple : transformer une course à pied en une
+              <strong>expérience musicale immersive</strong>. Chaque kilomètre est rythmé par une ambiance différente,
+              pensée pour vous porter, vous motiver et vous faire vivre la course d’une manière unique.
+            </p>
+          </div>
+          <div class="concept-image">
+            <img src="/assets/images/Coureur dynamique sous la lumière dorée.png" alt="Coureur en pleine action">
+          </div>
+        </div>
+
+        <div class="concept-block">
+          <div class="concept-text">
+            <h2>L’objectif ?</h2>
+            <p>
+              Mélanger l’énergie du sport et l’émotion de la musique, créer un événement accessible à tous,
+              du 5 km familial au 28 km plus exigeant, et offrir un final spectaculaire avec un concert à l’arrivée.
+            </p>
+          </div>
+          <div class="concept-image">
+            <img src="/assets/images/Coursestadium.png" alt="Concert à l'arrivée">
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION PRESENTATION DES COURSES -->
+      <section class="courses" id="courses">
+        <h2>Découvrez les parcours</h2>
+        <div class="course-list">
+
+          <!-- FICHE 1 KM -->
+          <div class="course-detail">
+            <div class="course-text-content">
+              <h3>1 km - La course des petits gones</h3>
+              <p class="course-description">
+                Car il faut une course pour tout le monde et pour les plus petits. Une boucle du groupama stadium les initier aux joies de la course !
+              </p>
+              
+              <div class="inforun">
+                <h4>Détails de la course</h4>
+                <ul>
+                  <li>
+                    <strong>Distance</strong>
+                    <span>1 km</span>
+                  </li>
+                  <li>
+                    <strong>Départ</strong>
+                    <span>10h</span>
+                  </li>
+                  <li>
+                    <strong>Lieu</strong>
+                    <span>Groupama Stadium</span>
+                  </li>
+                  <li>
+                    <strong>Ravitaillement</strong>
+                    <span>500m</span>
+                  </li>
+                </ul>
+                <a href="#preinscription" class="cta-small">Pré-inscription 1km</a>
+              </div>
+            </div>
+
+            <div class="course-media">
+              <div class="video-container">
+                <iframe
+                  src="https://www.youtube.com/embed/v9VuZS35qzA"
+                  title="Parcours 5 km"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- FICHE 5 KM -->
+          <div class="course-detail reverse">
+            <div class="course-text-content">
+              <h3>5 km - Le parcours familial</h3>
+              <p class="course-description">
+                Parcours court et fun, idéal pour les enfants et les familles. Une boucle facile pour s'échauffer en musique !
+              </p>
+              
+              <div class="inforun">
+                <h4>Détails de la course</h4>
+                <ul>
+                  <li>
+                    <strong>Distance</strong>
+                    <span>5 km</span>
+                  </li>
+                  <li>
+                    <strong>Départ</strong>
+                    <span>10h30</span>
+                  </li>
+                  <li>
+                    <strong>Lieu</strong>
+                    <span>Groupama Stadium</span>
+                  </li>
+                  <li>
+                    <strong>Ravitaillement</strong>
+                    <span>2.5 km</span>
+                  </li>
+                </ul>
+                <a href="#preinscription" class="cta-small">Pré-inscription 5km</a>
+              </div>
+            </div>
+
+            <div class="course-media">
+              <div class="video-container">
+                <iframe
+                  src="https://www.youtube.com/embed/v9VuZS35qzA"
+                  title="Parcours 5 km"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- FICHE 12 KM -->
+          <div class="course-detail">
+            <div class="course-text-content">
+              <h3>12 km - Le challenge rythmé</h3>
+              <p class="course-description">
+                Le run parfait pour se challenger au rythme de la musique. Une boucle rythmée par plusieurs ambiances musicales.
+              </p>
+
+              <div class="inforun">
+                <h4>Détails de la course</h4>
+                <ul>
+                  <li>
+                    <strong>Distance</strong>
+                    <span>12 km</span>
+                  </li>
+                  <li>
+                    <strong>Départ</strong>
+                    <span>12h00</span>
+                  </li>
+                  <li>
+                    <strong>Lieu</strong>
+                    <span>Groupama Stadium</span>
+                  </li>
+                  <li>
+                    <strong>Ravitaillement</strong>
+                    <span>4 km et 8 km</span>
+                  </li>
+                </ul>
+                <a href="#preinscription" class="cta-small">Pré-inscription 12km</a>
+              </div>
+            </div>
+
+            <div class="course-media">
+              <div class="video-container">
+                <iframe
+                  src="https://www.youtube.com/embed/v9VuZS35qzA"
+                  title="Parcours 12 km"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- FICHE 28 KM -->
+          <div class="course-detail reverse">
+            <div class="course-text-content">
+              <h3>28 km - Le défi spectaculaire</h3>
+              <p class="course-description">
+                Pour les coureurs expérimentés à la recherche d’un défi musical unique. Un tracé exigeant avec un final spectaculaire.
+              </p>
+
+              <div class="inforun">
+                <h4>Détails de la course</h4>
+                <ul>
+                  <li>
+                    <strong>Distance</strong>
+                    <span>28 km</span>
+                  </li>
+                  <li>
+                    <strong>Départ</strong>
+                    <span>14h00</span>
+                  </li>
+                  <li>
+                    <strong>Lieu</strong>
+                    <span>Groupama Stadium</span>
+                  </li>
+                  <li>
+                    <strong>Ravitaillement</strong>
+                    <span>7 km, 14 km et 21 km</span>
+                  </li>
+                </ul>
+                <a href="#preinscription" class="cta-small">Pré-inscription 28km</a>
+              </div>
+            </div>
+
+            <div class="course-media">
+              <div class="video-container">
+                <iframe
+                  src="https://www.youtube.com/embed/v9VuZS35qzA"
+                  title="Parcours 28 km"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION PRE-INSCRIPTION -->
+      <section id="preinscription">
+          <h2>Pré‑inscription</h2>
+          <p class="subtitle">Laissez votre email pour être averti de l’ouverture officielle des inscriptions et choisir la course qui vous intéresse.</p>
+          
+          <form class="preinscription-form" id="preinscriptionForm">
+              
+              <div class="form-group">
+                  <input type="text" id="nom" name="nom" placeholder="Nom complet" required />
+              </div>
+
+              <div class="form-group">
+                  <input type="email" id="email" name="email" placeholder="Adresse Email" required />
+              </div>
+              
+              <div class="form-group">
+                  <input type="tel" id="telephone" name="telephone" placeholder="Numéro de Téléphone" />
+              </div>
+
+              <div class="form-group">
+                  <select id="course" name="course" required>
+                      <!-- L'option value="" est celle qui sera validée par JS -->
+                      <option value="" disabled selected>Je suis intéressé par...</option>
+                      <option value="1km">1 km - enfant</option>
+                      <option value="5km">5 km - Familial</option>
+                      <option value="12km">12 km - Challenge</option>
+                      <option value="28km">28 km - Défi</option>
+                  </select>
+              </div>
+
+              <button type="submit" class="cta">Valider ma pré-inscription</button>
+          </form>
+          
+          <!-- EMPLACEMENT POUR LE MESSAGE DE VALIDATION/SUCCÈS -->
+          <div id="form-message" class="form-message"></div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/assets/images/logo.png" alt="" width="100px">
+            </div>
+            <div class="footer-links">
+                <a href="#courses">Les Courses</a>
+                <a href="#">Contact</a>
+                <a href="#">FAQ</a>
+                <a href="#">Mentions Légales</a>
+            </div>
+            <div class="footer-social">
+                <p>Suivez-nous</p>
+                <div class="social-icons">
+                    <a href="#" class="fb" aria-label="Facebook"></a>
+                    <a href="#" class="ig" aria-label="Instagram"></a>
+                    <a href="#" class="tw" aria-label="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Run In Music. Tous droits réservés.</p>
+        </div>
+      </footer>
+
+  <script src="assets/js/countdown.js"></script>
+  </body>
+</html>
