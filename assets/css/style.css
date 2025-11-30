@@ -29,6 +29,26 @@ header {
     
 header img {
   max-width: 100%;
+  height: 60px;
+  margin-left: 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #0066ff;
 }
 
 .hero {
@@ -37,13 +57,13 @@ header img {
   
   /* --- CHANGEMENT ICI --- */
   /* On superpose un dégradé noir sur l'image */
-  background: 
+  background:
     linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.2), /* En haut : peu opaque (20%) pour garder la clarté */
       rgba(0, 0, 0, 0.7)  /* En bas : très opaque (70%) pour faire ressortir le texte */
     ),
-    url("/assets/images/hero.jpeg") center/cover no-repeat;
+    url("../images/hero.jpeg") center/cover no-repeat;
   /* ---------------------- */
 
   min-height: 60vh;
