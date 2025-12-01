@@ -309,10 +309,10 @@
       <!-- SECTION PRE-INSCRIPTION -->
       <section id="preinscription">
           <h2>Pré‑inscription</h2>
-          <p class="subtitle">Laissez votre email pour être averti de l’ouverture officielle des inscriptions et choisir la course qui vous intéresse.</p>
-          
+          <p class="subtitle">Laissez votre email pour être averti de l'ouverture officielle des inscriptions et choisir la course qui vous intéresse.</p>
+
           <form class="preinscription-form" id="preinscriptionForm">
-              
+
               <div class="form-group">
                   <input type="text" id="nom" name="nom" placeholder="Nom complet" required />
               </div>
@@ -320,7 +320,7 @@
               <div class="form-group">
                   <input type="email" id="email" name="email" placeholder="Adresse Email" required />
               </div>
-              
+
               <div class="form-group">
                   <input type="tel" id="telephone" name="telephone" placeholder="Numéro de Téléphone" />
               </div>
@@ -338,9 +338,96 @@
 
               <button type="submit" class="cta">Valider ma pré-inscription</button>
           </form>
-          
+
           <!-- EMPLACEMENT POUR LE MESSAGE DE VALIDATION/SUCCÈS -->
           <div id="form-message" class="form-message"></div>
+      </section>
+
+      <!-- SECTION MUSIC PLAYER -->
+      <section class="music-section">
+        <h2>Les ambiances musicales</h2>
+        <p class="subtitle">Découvrez un aperçu des playlists qui rythmeront votre course</p>
+
+        <div class="music-player">
+          <div class="player-controls">
+            <button class="prev-btn" aria-label="Précédent">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+              </svg>
+            </button>
+            <button class="play-btn" aria-label="Lecture">
+              <svg class="play-icon" viewBox="0 0 24 24" width="40" height="40">
+                <path fill="currentColor" d="M8 5v14l11-7z"/>
+              </svg>
+              <svg class="pause-icon hidden" viewBox="0 0 24 24" width="40" height="40">
+                <path fill="currentColor" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+              </svg>
+            </button>
+            <button class="next-btn" aria-label="Suivant">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M16 18h2V6h-2zm-11-7l8.5-6v12z"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="track-info">
+            <h3 class="track-title">Warm Up - Pop/Rock</h3>
+            <p class="track-artist">Zone de départ - 0-2 km</p>
+          </div>
+
+          <div class="progress-container">
+            <div class="time current-time">0:00</div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+            <div class="time total-time">3:45</div>
+          </div>
+
+          <div class="volume-container">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <path fill="currentColor" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+            </svg>
+            <input type="range" class="volume-slider" min="0" max="100" value="70">
+          </div>
+
+          <div class="playlist">
+            <h4>Playlist complète</h4>
+            <ul class="playlist-items">
+              <li class="playlist-item active" data-track="0">
+                <span class="track-number">1</span>
+                <div class="track-details">
+                  <p class="track-name">Warm Up - Pop/Rock</p>
+                  <p class="track-zone">Zone départ - 0-2 km</p>
+                </div>
+                <span class="track-duration">3:45</span>
+              </li>
+              <li class="playlist-item" data-track="1">
+                <span class="track-number">2</span>
+                <div class="track-details">
+                  <p class="track-name">Electro Energy</p>
+                  <p class="track-zone">Zone montée - 2-5 km</p>
+                </div>
+                <span class="track-duration">4:20</span>
+              </li>
+              <li class="playlist-item" data-track="2">
+                <span class="track-number">3</span>
+                <div class="track-details">
+                  <p class="track-name">Hip-Hop Motivation</p>
+                  <p class="track-zone">Zone effort - 5-8 km</p>
+                </div>
+                <span class="track-duration">3:55</span>
+              </li>
+              <li class="playlist-item" data-track="3">
+                <span class="track-number">4</span>
+                <div class="track-details">
+                  <p class="track-name">Rock Finale</p>
+                  <p class="track-zone">Zone finale - 8-10 km</p>
+                </div>
+                <span class="track-duration">4:10</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
     </main>
@@ -375,5 +462,6 @@
   <script src="assets/js/form.js"></script>
   <script src="assets/js/menu.js"></script>
   <script src="assets/js/animations.js"></script>
+  <script src="assets/js/player.js"></script>
   </body>
 </html>
