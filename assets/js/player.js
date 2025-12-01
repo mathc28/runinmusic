@@ -5,30 +5,32 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: 'Warm Up - Pop/Rock',
       artist: 'Zone départ - 0-2 km',
-      duration: 225, // 3:45 en secondes
+      audio: 'assets/audio/warmup.mp3' // Ajoutez votre fichier audio ici
     },
     {
       title: 'Electro Energy',
       artist: 'Zone montée - 2-5 km',
-      duration: 260, // 4:20
+      audio: 'assets/audio/electro.mp3'
     },
     {
       title: 'Hip-Hop Motivation',
       artist: 'Zone effort - 5-8 km',
-      duration: 235, // 3:55
+      audio: 'assets/audio/hiphop.mp3'
     },
     {
       title: 'Rock Finale',
       artist: 'Zone finale - 8-10 km',
-      duration: 250, // 4:10
+      audio: 'assets/audio/rock.mp3'
     }
   ];
+
+  // Créer l'élément audio
+  const audio = new Audio();
+  audio.volume = 0.7; // Volume par défaut à 70%
 
   // Variables
   let currentTrackIndex = 0;
   let isPlaying = false;
-  let currentTime = 0;
-  let progressInterval = null;
 
   // Éléments DOM
   const floatingPlayer = document.getElementById('floatingPlayer');
@@ -90,8 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     trackTitle.textContent = track.title;
     trackArtist.textContent = track.artist;
-    currentTime = 0;
-    updateCurrentTime();
+
+    // Charger l'audio
+    audio.src = track.audio;
+    audio.load();
+
     updateProgressBar();
     updatePlaylistActive();
   }
@@ -105,20 +110,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mise à jour du temps total
   function updateTotalTime() {
-    const duration = tracks[currentTrackIndex].duration;
-    totalTimeEl.textContent = formatTime(duration);
+    if (audio.duration && !isNaN(audio.duration)) {
+      totalTimeEl.textContent = formatTime(audio.duration);
+    }
   }
 
   // Mise à jour du temps actuel
   function updateCurrentTime() {
-    currentTimeEl.textContent = formatTime(currentTime);
+    currentTimeEl.textContent = formatTime(audio.currentTime);
   }
 
   // Mise à jour de la barre de progression
   function updateProgressBar() {
-    const duration = tracks[currentTrackIndex].duration;
-    const progress = (currentTime / duration) * 100;
-    progressFill.style.width = `${progress}%`;
+    if (audio.duration && !isNaN(audio.duration)) {
+      const progress = (audio.currentTime / audio.duration) * 100;
+      progressFill.style.width = `${progress}%`;
+    }
   }
 
   // Mise à jour de la playlist active
@@ -143,47 +150,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Lecture
   function play() {
-    isPlaying = true;
-    playIcon.classList.add('hidden');
-    pauseIcon.classList.remove('hidden');
-
-    // Simuler la progression
-    progressInterval = setInterval(() => {
-      currentTime++;
-      updateCurrentTime();
-      updateProgressBar();
-
-      // Passer à la piste suivante quand terminée
-      if (currentTime >= tracks[currentTrackIndex].duration) {
-        nextTrack();
-      }
-    }, 1000);
+    audio.play().then(() => {
+      isPlaying = true;
+      playIcon.classList.add('hidden');
+      pauseIcon.classList.remove('hidden');
+    }).catch(err => {
+      console.error('Erreur de lecture:', err);
+    });
   }
 
   // Pause
   function pause() {
+    audio.pause();
     isPlaying = false;
     playIcon.classList.remove('hidden');
     pauseIcon.classList.add('hidden');
-
-    if (progressInterval) {
-      clearInterval(progressInterval);
-    }
   }
 
   // Piste précédente
   function prevTrack() {
-    if (currentTime > 3) {
-      currentTime = 0;
-      updateCurrentTime();
-      updateProgressBar();
+    if (audio.currentTime > 3) {
+      audio.currentTime = 0;
     } else {
       const newIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
       loadTrack(newIndex);
-      updateTotalTime();
-
       if (isPlaying) {
-        pause();
         play();
       }
     }
@@ -193,10 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function nextTrack() {
     const newIndex = (currentTrackIndex + 1) % tracks.length;
     loadTrack(newIndex);
-    updateTotalTime();
-
     if (isPlaying) {
-      pause();
       play();
     }
   }
@@ -207,11 +195,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const clickX = e.clientX - rect.left;
     const width = rect.width;
     const percentage = clickX / width;
-    const duration = tracks[currentTrackIndex].duration;
 
-    currentTime = duration * percentage;
-    updateCurrentTime();
-    updateProgressBar();
+    if (audio.duration && !isNaN(audio.duration)) {
+      audio.currentTime = audio.duration * percentage;
+    }
   }
 
   // Événements
@@ -224,16 +211,11 @@ document.addEventListener('DOMContentLoaded', () => {
   playlistItems.forEach((item, index) => {
     item.addEventListener('click', () => {
       loadTrack(index);
-      updateTotalTime();
-
-      if (isPlaying) {
-        pause();
-      }
       play();
     });
   });
 
-  // Raccourcis clavier (optionnel)
+  // Raccourcis clavier
   document.addEventListener('keydown', (e) => {
     if (floatingPlayer.classList.contains('closed')) return;
 
@@ -247,38 +229,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Événements audio
+  audio.addEventListener('timeupdate', () => {
+    updateCurrentTime();
+    updateProgressBar();
+  });
+
+  audio.addEventListener('ended', () => {
+    nextTrack();
+  });
+
+  audio.addEventListener('loadedmetadata', () => {
+    updateTotalTime();
+  });
+
+  audio.addEventListener('error', (e) => {
+    console.error('Erreur de chargement audio:', e);
+    // Afficher un message d'erreur à l'utilisateur
+    trackTitle.textContent = 'Erreur de chargement';
+    trackArtist.textContent = 'Fichier audio introuvable';
+  });
+
+  // Gestion du volume
+  const volumeBtn = document.querySelector('.volume-btn-mini');
+  if (volumeBtn) {
+    volumeBtn.addEventListener('click', () => {
+      if (audio.volume > 0) {
+        audio.volume = 0;
+        volumeBtn.style.opacity = '0.5';
+      } else {
+        audio.volume = 0.7;
+        volumeBtn.style.opacity = '1';
+      }
+    });
+  }
+
   // Initialiser
   init();
 
-  // Afficher le player après un délai (optionnel)
+  // Afficher le player après un délai
   setTimeout(() => {
     floatingPlayer.style.opacity = '1';
   }, 500);
 });
-
-/*
-  NOTES POUR INTÉGRATION AUDIO RÉELLE:
-
-  1. Créer un élément Audio:
-     const audio = new Audio();
-
-  2. Dans loadTrack():
-     audio.src = tracks[index].audio;
-     audio.load();
-
-  3. Dans play():
-     audio.play();
-
-  4. Dans pause():
-     audio.pause();
-
-  5. Écouter les événements:
-     audio.addEventListener('timeupdate', () => {
-       currentTime = audio.currentTime;
-       updateCurrentTime();
-       updateProgressBar();
-     });
-
-     audio.addEventListener('ended', nextTrack);
-     audio.addEventListener('loadedmetadata', updateTotalTime);
-*/
