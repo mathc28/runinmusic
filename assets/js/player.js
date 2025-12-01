@@ -1,13 +1,11 @@
-// Music Player fonctionnel
+// Floating Music Player
 document.addEventListener('DOMContentLoaded', () => {
-  // Données des pistes (simulées - à remplacer par de vraies URLs audio)
+  // Données des pistes
   const tracks = [
     {
       title: 'Warm Up - Pop/Rock',
-      artist: 'Zone de départ - 0-2 km',
+      artist: 'Zone départ - 0-2 km',
       duration: 225, // 3:45 en secondes
-      // Vous pourrez ajouter l'URL audio réelle ici
-      // audio: 'assets/audio/track1.mp3'
     },
     {
       title: 'Electro Energy',
@@ -33,21 +31,53 @@ document.addEventListener('DOMContentLoaded', () => {
   let progressInterval = null;
 
   // Éléments DOM
-  const playBtn = document.querySelector('.play-btn');
-  const playIcon = document.querySelector('.play-icon');
-  const pauseIcon = document.querySelector('.pause-icon');
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
-  const trackTitle = document.querySelector('.track-title');
-  const trackArtist = document.querySelector('.track-artist');
-  const currentTimeEl = document.querySelector('.current-time');
-  const totalTimeEl = document.querySelector('.total-time');
-  const progressBar = document.querySelector('.progress-bar');
-  const progressFill = document.querySelector('.progress-fill');
-  const volumeSlider = document.querySelector('.volume-slider');
-  const playlistItems = document.querySelectorAll('.playlist-item');
+  const floatingPlayer = document.getElementById('floatingPlayer');
+  const togglePlayerBtn = document.getElementById('togglePlayer');
+  const closePlayerBtn = document.getElementById('closePlayer');
+  const playerContent = document.getElementById('playerContent');
+  const playBtn = document.querySelector('.play-btn-mini');
+  const playIcon = document.querySelector('.play-icon-mini');
+  const pauseIcon = document.querySelector('.pause-icon-mini');
+  const prevBtn = document.querySelector('.prev-btn-mini');
+  const nextBtn = document.querySelector('.next-btn-mini');
+  const trackTitle = document.querySelector('.track-title-mini');
+  const trackArtist = document.querySelector('.track-artist-mini');
+  const currentTimeEl = document.querySelector('.current-time-mini');
+  const totalTimeEl = document.querySelector('.total-time-mini');
+  const progressBar = document.querySelector('.progress-bar-mini');
+  const progressFill = document.querySelector('.progress-fill-mini');
+  const playlistItems = document.querySelectorAll('.playlist-item-mini');
 
-  // Initialiser le player
+  // Toggle player (réduire/agrandir)
+  togglePlayerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    floatingPlayer.classList.toggle('minimized');
+    const svg = togglePlayerBtn.querySelector('svg path');
+    if (floatingPlayer.classList.contains('minimized')) {
+      svg.setAttribute('d', 'M7 14l5-5 5 5z'); // Flèche vers le haut
+    } else {
+      svg.setAttribute('d', 'M7 10l5 5 5-5z'); // Flèche vers le bas
+    }
+  });
+
+  // Fermer le player
+  closePlayerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    floatingPlayer.classList.add('closed');
+    if (isPlaying) {
+      pause();
+    }
+  });
+
+  // Cliquer sur le header pour toggle
+  const playerHeader = document.querySelector('.player-header');
+  playerHeader.addEventListener('click', (e) => {
+    if (e.target === playerHeader || e.target === document.querySelector('.player-label')) {
+      togglePlayerBtn.click();
+    }
+  });
+
+  // Initialiser
   function init() {
     loadTrack(currentTrackIndex);
     updateTotalTime();
@@ -117,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     playIcon.classList.add('hidden');
     pauseIcon.classList.remove('hidden');
 
-    // Simuler la progression (remplacer par audio.play() avec un vrai fichier audio)
+    // Simuler la progression
     progressInterval = setInterval(() => {
       currentTime++;
       updateCurrentTime();
@@ -144,12 +174,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Piste précédente
   function prevTrack() {
     if (currentTime > 3) {
-      // Si on est à plus de 3 secondes, revenir au début
       currentTime = 0;
       updateCurrentTime();
       updateProgressBar();
     } else {
-      // Sinon, piste précédente
       const newIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
       loadTrack(newIndex);
       updateTotalTime();
@@ -187,10 +215,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Événements
-  playBtn.addEventListener('click', togglePlay);
-  prevBtn.addEventListener('click', prevTrack);
-  nextBtn.addEventListener('click', nextTrack);
-  progressBar.addEventListener('click', seekTo);
+  if (playBtn) playBtn.addEventListener('click', togglePlay);
+  if (prevBtn) prevBtn.addEventListener('click', prevTrack);
+  if (nextBtn) nextBtn.addEventListener('click', nextTrack);
+  if (progressBar) progressBar.addEventListener('click', seekTo);
 
   // Clic sur un élément de la playlist
   playlistItems.forEach((item, index) => {
@@ -205,48 +233,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Volume (pour démo visuelle - à connecter avec un vrai audio)
-  volumeSlider.addEventListener('input', (e) => {
-    const volume = e.target.value / 100;
-    // Si vous utilisez un élément audio HTML5:
-    // audio.volume = volume;
-    console.log('Volume:', volume);
-  });
-
-  // Raccourcis clavier
+  // Raccourcis clavier (optionnel)
   document.addEventListener('keydown', (e) => {
-    // Seulement si le player est visible
-    const musicSection = document.querySelector('.music-section');
-    if (!musicSection) return;
+    if (floatingPlayer.classList.contains('closed')) return;
 
     switch(e.code) {
       case 'Space':
-        e.preventDefault();
-        togglePlay();
-        break;
-      case 'ArrowLeft':
-        e.preventDefault();
-        prevTrack();
-        break;
-      case 'ArrowRight':
-        e.preventDefault();
-        nextTrack();
+        if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+          e.preventDefault();
+          togglePlay();
+        }
         break;
     }
   });
 
   // Initialiser
   init();
+
+  // Afficher le player après un délai (optionnel)
+  setTimeout(() => {
+    floatingPlayer.style.opacity = '1';
+  }, 500);
 });
 
 /*
-  NOTE POUR INTÉGRER DE VRAIS FICHIERS AUDIO:
+  NOTES POUR INTÉGRATION AUDIO RÉELLE:
 
-  1. Ajouter un élément audio HTML5:
+  1. Créer un élément Audio:
      const audio = new Audio();
 
-  2. Dans loadTrack(), charger le fichier:
+  2. Dans loadTrack():
      audio.src = tracks[index].audio;
+     audio.load();
 
   3. Dans play():
      audio.play();
@@ -254,17 +272,13 @@ document.addEventListener('DOMContentLoaded', () => {
   4. Dans pause():
      audio.pause();
 
-  5. Écouter les événements audio:
+  5. Écouter les événements:
      audio.addEventListener('timeupdate', () => {
        currentTime = audio.currentTime;
        updateCurrentTime();
        updateProgressBar();
      });
 
-     audio.addEventListener('ended', () => {
-       nextTrack();
-     });
-
-  6. Pour le volume:
-     audio.volume = volumeSlider.value / 100;
+     audio.addEventListener('ended', nextTrack);
+     audio.addEventListener('loadedmetadata', updateTotalTime);
 */
