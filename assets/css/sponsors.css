@@ -9,6 +9,13 @@
   background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
   color: white;
   margin-bottom: 60px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2), /* En haut : peu opaque (20%) pour garder la clarté */
+      rgba(0, 0, 0, 0.7)  /* En bas : très opaque (70%) pour faire ressortir le texte */
+    ),
+    url("../images/sponsors.png") center/cover no-repeat;
 }
 
 .sponsors-hero h1 {
@@ -140,7 +147,6 @@
 }
 
 .sponsor-logo {
-  width: 100%;
   height: 180px;
   display: flex;
   align-items: center;
