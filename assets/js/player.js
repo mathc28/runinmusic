@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Données des pistes
   const tracks = [
     {
-      title: 'Warm Up - Pop/Rock',
-      artist: 'Zone départ - 0-2 km',
-      audio: 'assets/audio/warmup.mp3' // Ajoutez votre fichier audio ici
+      title: 'Den Den Mushi',
+      artist: 'OP - 0-2 km',
+      audio: "/assets/audio/Den-Den-Mushi.mp3" // Ajoutez votre fichier audio ici
     },
     {
       title: 'Electro Energy',
