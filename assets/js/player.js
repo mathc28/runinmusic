@@ -83,6 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function init() {
     loadTrack(currentTrackIndex);
     updateTotalTime();
+    
+    // Démarrer minimisé
+    floatingPlayer.classList.add('minimized');
+    const svg = togglePlayerBtn.querySelector('svg path');
+    svg.setAttribute('d', 'M7 14l5-5 5 5z'); // Flèche vers le haut
   }
 
   // Charger une piste
