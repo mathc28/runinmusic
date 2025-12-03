@@ -330,14 +330,15 @@
               </div>
 
               <div class="form-group">
-                  <select id="course" name="course" required>
-                      <!-- L'option value="" est celle qui sera validée par JS -->
-                      <option value="" disabled selected>Je suis intéressé par...</option>
-                      <option value="1km">1 km - enfant</option>
-                      <option value="5km">5 km - Familial</option>
-                      <option value="12km">12 km - Challenge</option>
-                      <option value="28km">28 km - Défi</option>
-                  </select>
+                <label for="course" class="sr-only">Choisir une course</label>
+                <select id="course" name="course" required>
+                  <!-- L'option value="" est celle qui sera validée par JS -->
+                  <option value="" disabled selected>Je suis intéressé par...</option>
+                  <option value="1km">1 km - enfant</option>
+                  <option value="5km">5 km - Familial</option>
+                  <option value="12km">12 km - Challenge</option>
+                   <option value="28km">28 km - Défi</option>
+                </select>
               </div>
 
               <button type="submit" class="cta">Valider ma pré-inscription</button>
