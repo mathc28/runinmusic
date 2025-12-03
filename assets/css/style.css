@@ -725,6 +725,14 @@ nav a:hover {
   text-align: left; /* Aligne le contenu du groupe à gauche */
 }
 
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
 .form-group input{
   box-sizing: border-box;
 }
