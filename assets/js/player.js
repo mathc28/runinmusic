@@ -10,17 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: 'Electro Energy',
       artist: 'Zone montée - 2-5 km',
-      audio: 'assets/audio/electro.mp3'
+      audio: '/assets/audio/electro.mp3'
     },
     {
       title: 'Hip-Hop Motivation',
       artist: 'Zone effort - 5-8 km',
-      audio: 'assets/audio/hiphop.mp3'
+      audio: '/assets/audio/hiphop.mp3'
     },
     {
       title: 'Rock Finale',
       artist: 'Zone finale - 8-10 km',
-      audio: 'assets/audio/rock.mp3'
+      audio: '/assets/audio/rock.mp3'
     }
   ];
 
