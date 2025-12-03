@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Données des pistes
   const tracks = [
     {
-      title: 'Warm Up - Pop/Rock',
-      artist: 'Zone départ - 0-2 km',
-      audio: 'assets/audio/warmup.mp3' // Ajoutez votre fichier audio ici
+      title: 'Den Den Mushi',
+      artist: 'OP - 0-2 km',
+      audio: "/assets/audio/Den-Den-Mushi.mp3" // Ajoutez votre fichier audio ici
     },
     {
       title: 'Electro Energy',
@@ -83,6 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function init() {
     loadTrack(currentTrackIndex);
     updateTotalTime();
+    
+    // Démarrer minimisé
+    floatingPlayer.classList.add('minimized');
+    const svg = togglePlayerBtn.querySelector('svg path');
+    svg.setAttribute('d', 'M7 14l5-5 5 5z'); // Flèche vers le haut
   }
 
   // Charger une piste
