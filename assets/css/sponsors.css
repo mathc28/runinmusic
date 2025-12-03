@@ -15,7 +15,7 @@
       rgba(0, 0, 0, 0.2), /* En haut : peu opaque (20%) pour garder la clarté */
       rgba(0, 0, 0, 0.7)  /* En bas : très opaque (70%) pour faire ressortir le texte */
     ),
-    url("../images/sponsors.png") center/cover no-repeat;
+    url("../images/sponsors.webp") center/cover no-repeat;
 }
 
 .sponsors-hero h1 {

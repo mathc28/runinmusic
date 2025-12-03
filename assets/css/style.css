@@ -140,7 +140,7 @@ nav a:hover {
       rgba(0, 0, 0, 0.2), /* En haut : peu opaque (20%) pour garder la clarté */
       rgba(0, 0, 0, 0.7)  /* En bas : très opaque (70%) pour faire ressortir le texte */
     ),
-    url("../images/hero.jpeg") center/cover no-repeat;
+    url("../images/hero.webp") center/cover no-repeat;
   /* ---------------------- */
 
   min-height: 60vh;
@@ -395,6 +395,7 @@ nav a:hover {
   margin-bottom: 20px;
   background: linear-gradient(90deg, #0066ff 0%, #9b35ff 50%, #ff6600 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -484,6 +485,7 @@ nav a:hover {
   font-size: 2.5rem;
   background: linear-gradient(90deg, #0066ff 0%, #9b35ff 50%, #ff6600 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -525,6 +527,7 @@ nav a:hover {
   margin-bottom: 10px;
   background: linear-gradient(90deg, #0066ff 0%, #9b35ff 50%, #ff6600 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -697,6 +700,7 @@ nav a:hover {
   font-size: 2.5rem;
   background: linear-gradient(90deg, #0066ff 0%, #9b35ff 50%, #ff6600 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   margin-bottom: 10px;
 }
