@@ -689,6 +689,62 @@ nav a:hover {
 }
 
 
+/* --- LITE YOUTUBE EMBED (Performance Optimized) --- */
+.lite-youtube {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Ratio 16:9 */
+  background-color: #000;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.lite-youtube img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s;
+}
+
+.lite-youtube:hover img {
+  opacity: 0.8;
+}
+
+.lite-youtube-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.lite-youtube:hover .lite-youtube-play {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.lite-youtube iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
 /* --- SECTION PRE-INSCRIPTION --- */
 #preinscription {
   width: 100%;
