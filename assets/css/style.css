@@ -262,6 +262,10 @@ nav a:hover {
     display: flex;
   }
 
+  nav {
+    margin-right: 0;
+  }
+
   .nav-menu {
     position: fixed;
     top: 70px;
@@ -286,7 +290,7 @@ nav a:hover {
     padding: 15px 0;
     border-bottom: 1px solid #eee;
     width: 100%;
-    text-align: left;
+    text-align: center;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
   }
 
   .nav-menu a.cta {
@@ -329,6 +333,10 @@ nav a:hover {
 }
 
 @media (max-width: 480px) {
+  .nav-menu {
+    max-width: 100%;
+  }
+  
   .hero h1 {
     font-size: 2rem;
   }
@@ -1019,10 +1027,13 @@ nav a:hover {
 
 .play-btn-mini {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white !important;
   width: 45px;
   height: 45px;
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.play-btn-mini svg {
+  color: white;
 }
 
 .play-btn-mini:hover {
@@ -1198,12 +1209,15 @@ nav a:hover {
 }
 
 .social-icons a {
-  display: block;
-  width: 30px; /* Taille des icônes */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
   height: 30px;
   background-size: cover;
   background-position: center;
-  border-radius: 5px; /* Optionnel : pour un look plus doux */
+  border-radius: 5px;
   transition: transform 0.2s;
   text-decoration: none;
 }
@@ -1216,41 +1230,21 @@ nav a:hover {
   transform: scale(1.1);
 }
 
-/* 📌 COULEURS D'ORIGINE des Logos de Réseaux Sociaux */
-/* Utilisez des icônes SVG ou des polices d'icônes (comme FontAwesome) pour un meilleur rendu.
-   Si vous utilisez des images (background-image), assurez-vous qu'elles sont les logos officiels colorés. */
-
+/* Social icons colors */
 .social-icons .fb {
-    background-color: #3b5998; /* Facebook Blue */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    /* Si vous utilisez une image, remplacez background-color par background-image: url('chemin/vers/facebook-logo-white.svg'); */
+  background-color: #3b5998;
 }
 
 .social-icons .ig {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); /* Instagram Gradient */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
 
 .social-icons .tk {
-  background-color: black; /* Twitter Blue */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  background-color: black;
 }
 
 .social-icons .li {
-  background-color: #0e76a8; /* Twitter Blue */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  background-color: #0e76a8;
 }
 
 /* --- SECTION COPYRIGHT (bas) --- */
@@ -1285,8 +1279,474 @@ nav a:hover {
         margin-top: 15px;
         text-align: center;
     }
-    
+
     .social-icons {
         justify-content: center; /* Centrer les icônes en mode mobile */
     }
+}
+
+/* --- CONTACT PAGE STYLES --- */
+
+/* Hero Section */
+.contact-hero {
+  padding: 120px 20px 80px;
+  text-align: center;
+  color: white;
+  margin-bottom: 60px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../images/hero.webp") center/cover no-repeat;
+}
+
+.contact-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.contact-hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+/* Contact Section */
+.contact-section {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+}
+
+/* Title */
+.contact-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #0066ff;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.contact-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #0066ff, #00ccff);
+  border-radius: 2px;
+}
+
+.contact-description {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Contact Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+/* Contact Cards */
+.contact-card {
+  background: white;
+  border-radius: 15px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-color: #0066ff;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #0066ff 0%, #9b35ff 100%);
+  border-radius: 50%;
+  color: white;
+}
+
+.contact-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.contact-card a {
+  color: #0066ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-card a:hover {
+  color: #9b35ff;
+  text-decoration: underline;
+}
+
+/* Social Media Section */
+.contact-social-section {
+  text-align: center;
+  margin-top: 60px;
+  padding: 40px 20px;
+  background: #f8f8f8;
+  border-radius: 15px;
+}
+
+.contact-social-section h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.contact-social-section .social-icons {
+  justify-content: center;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .contact-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-hero p {
+    font-size: 1.1rem;
+  }
+
+  .contact-title {
+    font-size: 2.2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    padding: 100px 20px 60px;
+  }
+
+  .contact-hero h1 {
+    font-size: 2rem;
+  }
+
+  .contact-hero p {
+    font-size: 1rem;
+  }
+
+  .contact-section {
+    margin-bottom: 60px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-grid {
+    gap: 25px;
+  }
+
+  .contact-card {
+    padding: 30px 20px;
+  }
+
+  .contact-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .contact-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-social-section {
+    padding: 30px 20px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-hero p {
+    font-size: 0.95rem;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-description {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-card {
+    padding: 25px 15px;
+  }
+
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .contact-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .contact-card p {
+    font-size: 0.9rem;
+  }
+
+  .contact-social-section {
+    padding: 25px 15px;
+    margin-top: 30px;
+  }
+
+  .contact-social-section h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* --- LEGAL PAGE STYLES --- */
+
+/* Hero Section */
+.legal-hero {
+  padding: 120px 20px 80px;
+  text-align: center;
+  color: white;
+  margin-bottom: 60px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../images/hero.webp") center/cover no-repeat;
+}
+
+.legal-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.legal-hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+/* Legal Section */
+.legal-section {
+  max-width: 900px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+}
+
+.legal-container {
+  background: white;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.legal-block {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.legal-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.legal-block h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #0066ff;
+}
+
+.legal-block h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 25px 0 15px 0;
+  color: #333;
+}
+
+.legal-block p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.legal-block ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 15px 0;
+}
+
+.legal-block ul li {
+  padding: 8px 0 8px 25px;
+  position: relative;
+  color: #555;
+  line-height: 1.6;
+}
+
+.legal-block ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #0066ff;
+  font-weight: bold;
+}
+
+.legal-block a {
+  color: #0066ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.legal-block a:hover {
+  color: #9b35ff;
+  text-decoration: underline;
+}
+
+.last-update {
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .legal-hero {
+    padding: 100px 20px 60px;
+  }
+
+  .legal-hero h1 {
+    font-size: 2rem;
+  }
+
+  .legal-hero p {
+    font-size: 1rem;
+  }
+
+  .legal-container {
+    padding: 30px 20px;
+  }
+
+  .legal-block h2 {
+    font-size: 1.5rem;
+  }
+
+  .legal-block h3 {
+    font-size: 1.2rem;
+  }
+
+  .legal-block p {
+    text-align: left;
+  }
+}
+
+@media (max-width: 576px) {
+  .legal-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .legal-hero p {
+    font-size: 0.95rem;
+  }
+
+  .legal-container {
+    padding: 25px 15px;
+  }
+
+  .legal-block {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+  }
+
+  .legal-block h2 {
+    font-size: 1.3rem;
+  }
+
+  .legal-block h3 {
+    font-size: 1.1rem;
+  }
+
+  .legal-block p {
+    font-size: 0.9rem;
+  }
+
+  .legal-block ul li {
+    font-size: 0.9rem;
+    padding-left: 20px;
+  }
 }
