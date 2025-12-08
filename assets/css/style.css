@@ -876,6 +876,68 @@ nav a:hover {
                 margin-bottom: 25px;
             }
         }
+
+
+/* --- BANDEAU SPONSORS DÉROULANT --- */
+.sponsors-ticker {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  padding: 15px 0;
+  z-index: 999;
+}
+
+.sponsors-ticker-track {
+  display: flex;
+  align-items: center;
+  animation: scroll-sponsors 20s linear infinite;
+  gap: 30px;
+}
+
+.sponsor-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.sponsor-item img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.sponsor-item img:hover {
+  opacity: 1;
+}
+
+@keyframes scroll-sponsors {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sponsors-ticker {
+    bottom: 350px;
+    right: 10px;
+    left: 10px;
+    width: auto;
+  }
+}
+
+
+
  
 /* --- FLOATING MUSIC PLAYER --- */
 .floating-player {
