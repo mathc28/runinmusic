@@ -51,8 +51,7 @@
       <nav class="nav-menu">
         <a href="#concept">Le concept</a>
         <a href="#courses">Les courses</a>
-        <a href="sponsors.html">Les sponsors</a>
-        <a href="contact.html">Contact</a>
+        <a href="/sponsors.html">Les sponsors</a>
         <a class="cta" href="#preinscription">Pré-inscription</a>
       </nav>
     </header>
@@ -293,37 +292,41 @@
           <h2>Pré‑inscription</h2>
           <p class="subtitle">Laissez votre email pour être averti de l'ouverture officielle des inscriptions et choisir la course qui vous intéresse.</p>
 
-          <form class="preinscription-form" id="preinscriptionForm">
+          <form class="preinscription-form" id="preinscriptionForm" action="/traitement_inscription.php" method="POST">
 
-              <div class="form-group">
-                  <label for="nom">Nom complet</label>
-                  <input type="text" id="nom" name="nom" placeholder="Nom complet" required aria-required="true" />
-              </div>
+            <div style="display:none;" aria-hidden="true">
+                <label for="spam_check">Veuillez laisser ce champ vide</label>
+                <input type="text" name="spam_check" id="spam_check" tabindex="-1">
+            </div>
 
-              <div class="form-group">
-                  <label for="email">Adresse Email</label>
-                  <input type="email" id="email" name="email" placeholder="Adresse Email" required aria-required="true" />
-              </div>
+            <div class="form-group">
+                <label for="nom">Nom complet</label>
+                <input type="text" id="nom" name="nom" placeholder="Nom complet" required="" aria-required="true">
+            </div>
 
-              <div class="form-group">
-                  <label for="telephone">Numéro de Téléphone (optionnel)</label>
-                  <input type="tel" id="telephone" name="telephone" placeholder="Numéro de Téléphone" />
-              </div>
+            <div class="form-group">
+                <label for="email">Adresse Email</label>
+                <input type="email" id="email" name="email" placeholder="Adresse Email" required="" aria-required="true">
+            </div>
 
-              <div class="form-group">
+            <div class="form-group">
+                <label for="telephone">Numéro de Téléphone (optionnel)</label>
+                <input type="tel" id="telephone" name="telephone" placeholder="Numéro de Téléphone">
+            </div>
+
+            <div class="form-group">
                 <label for="course">Choisir une course</label>
-                <select id="course" name="course" required aria-required="true">
-                  <!-- L'option value="" est celle qui sera validée par JS -->
-                  <option value="" disabled selected>Je suis intéressé par...</option>
-                  <option value="1km">1 km - enfant</option>
-                  <option value="5km">5 km - Familial</option>
-                  <option value="12km">12 km - Challenge</option>
-                   <option value="28km">28 km - Défi</option>
+                <select id="course" name="course" required="" aria-required="true">
+                    <option value="" disabled="" selected="">Je suis intéressé par...</option>
+                    <option value="1km">1 km - enfant</option>
+                    <option value="5km">5 km - Familial</option>
+                    <option value="12km">12 km - Challenge</option>
+                    <option value="28km">28 km - Défi</option>
                 </select>
-              </div>
+            </div>
 
-              <button type="submit" class="cta">Valider ma pré-inscription</button>
-          </form>
+            <button type="submit" class="cta">Valider ma pré-inscription</button>
+        </form>
 
           <!-- EMPLACEMENT POUR LE MESSAGE DE VALIDATION/SUCCÈS -->
           <div id="form-message" class="form-message"></div>
@@ -432,9 +435,9 @@
         </div>
         <div class="footer-links">
           <a href="#courses">Les Courses</a>
-          <a href="contact.html">Contact</a>
+          <a href="#">Contact</a>
           <a href="#">FAQ</a>
-          <a href="mentions-legales.html">Mentions Légales</a>
+          <a href="#">Mentions Légales</a>
         </div>
         <div class="footer-social">
           <p>Suivez-nous</p>
