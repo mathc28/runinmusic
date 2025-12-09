@@ -880,21 +880,21 @@ nav a:hover {
 
 /* --- BANDEAU SPONSORS DÉROULANT --- */
 .sponsors-ticker {
-  width: 100%;
+  width: 100%;                              /* Pleine largeur au lieu de 320px */
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  padding: 15px 0;
-  z-index: 999;
+  padding: 30px 0;                          /* Plus d'espace vertical */
+  margin: 40px 0;                           /* Marge haut/bas */
+  /* SUPPRIMÉ: position: fixed, bottom, right, z-index */
 }
 
 .sponsors-ticker-track {
   display: flex;
   align-items: center;
-  animation: scroll-sponsors 5s linear infinite;
-  gap: 30px;
+  animation: scroll-sponsors 40s linear infinite;  /* Plus lent = plus fluide */
+  gap: 60px;
 }
 
 .sponsor-item {
@@ -902,29 +902,54 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 10px;
+  padding: 0 20px;                          /* Plus d'espace */
 }
 
 .sponsor-item img {
-  height: 40px;
+  height: 60px;                             /* 60px au lieu de 40px */
   width: auto;
   object-fit: contain;
   opacity: 0.8;
   transition: opacity 0.3s;
+  filter: grayscale(100%);                  /* Noir & blanc par défaut */
 }
 
 .sponsor-item img:hover {
   opacity: 1;
+  filter: grayscale(0%);                    /* Couleur au survol */
 }
 
+/* Infinite seamless scroll animation */
 @keyframes scroll-sponsors {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-25%);  /* -25% car on a 4 séries (100/4 = 25) */
   }
 }
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sponsors-ticker {
+    padding: 20px 0;
+    margin: 20px 0;
+  }
+
+  .sponsors-ticker-track {
+    gap: 40px;
+  }
+
+  .sponsor-item {
+    padding: 0 15px;
+  }
+
+  .sponsor-item img {
+    height: 40px;
+  }
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -935,8 +960,6 @@ nav a:hover {
     width: auto;
   }
 }
-
-
 
  
 /* --- FLOATING MUSIC PLAYER --- */
