@@ -297,6 +297,7 @@ nav a:hover {
     margin-top: 20px;
     text-align: center;
     border: none;
+    width: 75%;
   }
 
   /* Hero responsive */
@@ -333,6 +334,10 @@ nav a:hover {
 }
 
 @media (max-width: 480px) {
+  .hero{
+    justify-content: flex-start;
+  }
+
   .nav-menu {
     max-width: 100%;
   }
@@ -352,6 +357,7 @@ nav a:hover {
 
   #countdown {
     gap: 10px;
+    align-self: center;
   }
 
   .count-block {
@@ -439,7 +445,7 @@ nav a:hover {
   .concept-block {
     flex-direction: column; /* Mobile : Image sous le texte (empilé) */
     align-items: center; /* Centre les éléments */
-    gap: 20px;
+    gap: 2px;
     margin-bottom: 40px;
   }
 
@@ -459,7 +465,8 @@ nav a:hover {
   }
 
   .concept-text p {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    text-align: justify;
   }
 
   .concept-image {
@@ -644,14 +651,14 @@ nav a:hover {
 
 @media (max-width: 991px) {
     .course-detail {
-        flex-direction: column; /* Mobile : Image sous le texte (empilé) */
+        flex-direction: column-reverse; /* Mobile : Image sous le texte (empilé) */
         gap: 20px;
         padding: 20px;
     }
     
     /* On annule l'inversion pour les mobiles */
     .course-detail.reverse {
-        flex-direction: column; 
+        flex-direction: column-reverse; 
     }
 
     .course-text-content {
@@ -669,8 +676,12 @@ nav a:hover {
 }
 
 @media (max-width: 576px) {
+  .course-list {
+    padding-bottom: 20px;
+  }
+  
   .courses {
-    padding: 40px 0;
+    padding: 0px;
   }
   .courses h2 {
     font-size: 2rem;
@@ -678,7 +689,7 @@ nav a:hover {
   }
 
   .course-detail {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     padding: 15px;
   }
 
@@ -863,18 +874,24 @@ nav a:hover {
         }
 
         /* --- MOBILE ADAPTATION --- */
-        @media (max-width: 576px) {
-            #preinscription {
-                padding: 40px 10px;
-            }
-            .preinscription-form {
-                max-width: 95%;
-                padding: 20px;
-            }
-            .subtitle {
-                font-size: 1rem;
-                margin-bottom: 25px;
-            }
+        @media (max-width: 576px) { 
+          #preinscription{
+            padding: 0 20px;
+            width: 90%;
+          }
+          
+          #preinscription p{
+            text-align: justify;
+          }
+
+          .preinscription-form {
+            max-width: 95%;
+            padding: 20px;
+          }
+          .subtitle {
+            font-size: 1rem;
+            margin-bottom: 25px;
+          }
         }
 
 
