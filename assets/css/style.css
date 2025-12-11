@@ -210,7 +210,7 @@ nav a:hover {
 .count-block {
   padding: 20px 30px;
   border-radius: 25px;
-  min-width: 140px;
+  min-width: 110px;
   text-align: center;
   color: #fff;
   background: linear-gradient(90deg, #0066ff 0%, #9b35ff 50%, #ff6600 100%);
@@ -437,7 +437,7 @@ nav a:hover {
 
 /* --- MEDIA QUERY : ADAPTATION VERS LE MOBILE (MAX-WIDTH) --- */
 
-@media (max-width: 991px) { /* Pour les tablettes et mobiles */
+@media (max-width: 768px) { /* Pour les tablettes et mobiles */
   .concept {
     padding: 40px 20px;
   }
@@ -649,7 +649,7 @@ nav a:hover {
 
 /* 2. MEDIA QUERY : ADAPTATION VERS LE MOBILE (MAX-WIDTH) */
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
     .course-detail {
         flex-direction: column-reverse; /* Mobile : Image sous le texte (empilé) */
         gap: 20px;
