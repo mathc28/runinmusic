@@ -140,7 +140,7 @@ nav a:hover {
       rgba(0, 0, 0, 0.2), /* En haut : peu opaque (20%) pour garder la clarté */
       rgba(0, 0, 0, 0.7)  /* En bas : très opaque (70%) pour faire ressortir le texte */
     ),
-    url("../images/hero2.webp") center/cover no-repeat;
+    url("../images/hero4.webp") center/cover no-repeat;
   /* ---------------------- */
 
   min-height: 60vh;
@@ -177,7 +177,9 @@ nav a:hover {
   
   /* Mise en page simple */
   max-width: 1000px;
-  margin: 40px auto; /* Marge réduite pour rester groupé */
+  margin: 80px auto; /* Marge réduite pour rester groupé */
+  margin-bottom: 0px;
+
   
   /* --- CHANGEMENT ICI --- */
   /* Plus de background ni de border. Juste une ombre forte sur les lettres */
@@ -193,6 +195,7 @@ nav a:hover {
   /* Mise en page simple */
   max-width: 1000px;
   margin: 40px auto; /* Marge réduite pour rester groupé */
+  margin-top: 0px;
   
   /* --- CHANGEMENT ICI --- */
   /* Plus de background ni de border. Juste une ombre forte sur les lettres */
