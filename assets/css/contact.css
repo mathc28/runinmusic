@@ -1,0 +1,278 @@
+/* --- CONTACT PAGE STYLES --- */
+
+/* Hero Section */
+.contact-hero {
+  padding: 120px 20px 80px;
+  text-align: center;
+  color: white;
+  margin-bottom: 60px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../images/scandossard.webp") bottom/cover no-repeat;
+}
+
+.contact-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.contact-hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+/* Contact Section */
+.contact-section {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+}
+
+/* Title */
+.contact-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #0066ff;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.contact-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #0066ff, #00ccff);
+  border-radius: 2px;
+}
+
+.contact-description {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Contact Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+/* Contact Cards */
+.contact-card {
+  background: white;
+  border-radius: 15px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-color: #0066ff;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #0066ff 0%, #9b35ff 100%);
+  border-radius: 50%;
+  color: white;
+}
+
+.contact-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.contact-card a {
+  color: #0066ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-card a:hover {
+  color: #9b35ff;
+  text-decoration: underline;
+}
+
+/* Social Media Section */
+.contact-social-section {
+  text-align: center;
+  margin-top: 60px;
+  padding: 40px 20px;
+  background: #f8f8f8;
+  border-radius: 15px;
+}
+
+.contact-social-section h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.contact-social-section .social-icons {
+  justify-content: center;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .contact-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-hero p {
+    font-size: 1.1rem;
+  }
+
+  .contact-title {
+    font-size: 2.2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    padding: 100px 20px 60px;
+  }
+
+  .contact-hero h1 {
+    font-size: 2rem;
+  }
+
+  .contact-hero p {
+    font-size: 1rem;
+  }
+
+  .contact-section {
+    margin-bottom: 60px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-grid {
+    gap: 25px;
+  }
+
+  .contact-card {
+    padding: 30px 20px;
+  }
+
+  .contact-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .contact-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-social-section {
+    padding: 30px 20px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-hero p {
+    font-size: 0.95rem;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-description {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-card {
+    padding: 25px 15px;
+  }
+
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .contact-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .contact-card p {
+    font-size: 0.9rem;
+  }
+
+  .contact-social-section {
+    padding: 25px 15px;
+    margin-top: 30px;
+  }
+
+  .contact-social-section h3 {
+    font-size: 1.1rem;
+  }
+}
