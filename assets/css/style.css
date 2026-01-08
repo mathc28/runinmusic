@@ -76,11 +76,17 @@ header img {
   margin-left: 20px;
 }
 
+/* Navigation desktop */
 nav {
   display: flex;
   align-items: center;
   gap: 25px;
   margin-right: 20px;
+  position: static; /* Assure position normale sur desktop */
+  width: auto;
+  height: auto;
+  background: transparent;
+  flex-direction: row;
 }
 
 nav a {
@@ -88,6 +94,8 @@ nav a {
   color: #444;
   font-weight: 600;
   transition: color 0.3s;
+  padding: 0;
+  border-bottom: none;
 }
 
 nav a:hover {
@@ -277,11 +285,8 @@ nav a:hover {
     display: flex;
   }
 
-  nav {
-    margin-right: 0;
-  }
-
-  .nav-menu {
+  /* Menu mobile caché par défaut */
+  nav.nav-menu {
     position: fixed;
     top: 70px;
     right: -100%;
@@ -295,17 +300,19 @@ nav a:hover {
     transition: right 0.3s ease-in-out;
     z-index: 1000;
     gap: 0;
+    margin-right: 0;
   }
 
-  .nav-menu.active {
+  /* Menu visible quand actif */
+  nav.nav-menu.active {
     right: 0;
   }
 
-  .nav-menu a {
-    padding: 15px 0;
+  nav.nav-menu a {
+    padding: 15px 20px;
     border-bottom: 1px solid #eee;
     width: 100%;
-    text-align: center;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+    text-align: center;
   }
 
   .nav-menu a.cta {
