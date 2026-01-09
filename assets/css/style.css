@@ -716,6 +716,7 @@ nav a:hover {
   .courses h2 {
     font-size: 2rem;
     margin-bottom: 30px;
+    padding-top: 30px;
   }
 
   .course-detail {
@@ -986,6 +987,7 @@ nav a:hover {
 
   .sponsors-ticker-track {
     gap: 40px;
+    padding-bottom: 0px;
   }
 
   .sponsor-item {
