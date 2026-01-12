@@ -39,8 +39,9 @@
   </head>
 
   <body>
+    <!-- Navigation avec effet glassmorphism -->
     <header>
-      <a href="#">
+      <a href="#" class="logo-link">
         <img src="assets/images/logo.webp" alt="Logo Run In Music" />
       </a>
       <button class="burger-menu" aria-label="Menu" aria-expanded="false">
@@ -49,34 +50,45 @@
         <span></span>
       </button>
       <nav class="nav-menu">
-        <a href="#concept">Le concept</a>
-        <a href="#courses">Les courses</a>
-        <a href="/sponsors.html">Les sponsors</a>
-        <a href="/contact.html">Contact</a>
-        <a class="cta" href="#preinscription">Pré-inscription</a>
+        <a href="#concept" class="nav-link">Le concept</a>
+        <a href="#courses" class="nav-link">Les courses</a>
+        <a href="/sponsors.html" class="nav-link">Les sponsors</a>
+        <a href="/contact.html" class="nav-link">Contact</a>
+        <a class="cta-btn" href="#preinscription">Pré-inscription</a>
       </nav>
     </header>
     <main>
+      <!-- Hero Section avec overlay dynamique -->
       <section class="hero">
-        <h1 class="title">Courir. Vibrer. Danser.</h1>
-        <p>
-          Participez à une expérience unique : des courses à pied pour tous les niveaux, rythmées par des ambiances musicales et un grand concert final.        </p>
-        <div id="countdown">
-          <div class="count-block">
-            <div class="count-number" id="cd-days">0</div>
-            <div class="count-label">Jours</div>
-          </div>
-          <div class="count-block">
-            <div class="count-number" id="cd-hours">0</div>
-            <div class="count-label">Heures</div>
-          </div>
-          <div class="count-block">
-            <div class="count-number" id="cd-minutes">0</div>
-            <div class="count-label">Min</div>
-          </div>
-          <div class="count-block">
-            <div class="count-number" id="cd-seconds">0</div>
-            <div class="count-label">Sec</div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="word word-1">Courir.</span>
+            <span class="word word-2">Vibrer.</span>
+            <span class="word word-3">Danser.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Une expérience unique où la musique rythme chaque foulée
+          </p>
+
+          <!-- Countdown avec design néomorphique -->
+          <div id="countdown">
+            <div class="count-block">
+              <div class="count-number" id="cd-days">0</div>
+              <div class="count-label">Jours</div>
+            </div>
+            <div class="count-block">
+              <div class="count-number" id="cd-hours">0</div>
+              <div class="count-label">Heures</div>
+            </div>
+            <div class="count-block">
+              <div class="count-number" id="cd-minutes">0</div>
+              <div class="count-label">Min</div>
+            </div>
+            <div class="count-block">
+              <div class="count-number" id="cd-seconds">0</div>
+              <div class="count-label">Sec</div>
+            </div>
           </div>
         </div>
       </section>
@@ -94,6 +106,7 @@
           </div>
           <div class="concept-image">
             <img src="assets/images/Gemini_Generated_Image_cu8gglcu8gglcu8g.webp" alt="Vue d'ensemble de la course" width="600" height="400" loading="lazy">
+            <div class="image-overlay"></div>
           </div>
         </div>
 
@@ -108,6 +121,7 @@
           </div>
           <div class="concept-image">
             <img src="assets/images/Runlac.webp" alt="Coureur en pleine action" width="600" height="400" loading="lazy">
+            <div class="image-overlay"></div>
           </div>
         </div>
 
@@ -122,6 +136,7 @@
           </div>
           <div class="concept-image">
             <img src="assets/images/olvalleerun.webp" alt="Concert à l'arrivée" width="600" height="400" loading="lazy">
+            <div class="image-overlay"></div>
           </div>
         </div>
       </section>
@@ -336,9 +351,9 @@
       </section>
     </main>
 
+    <!-- Sponsors Ticker -->
     <div class="sponsors-ticker">
       <div class="sponsors-ticker-track">
-        <!-- Série 1 -->
         <div class="sponsor-item">
           <img src="assets/images/sponsors/rad.png" alt="RAD" loading="lazy">
         </div>
@@ -351,8 +366,7 @@
         <div class="sponsor-item">
           <img src="assets/images/sponsors/institutv.jpeg" alt="Sponsor" loading="lazy">
         </div>
-        
-        <!-- Série 2 (duplication) -->
+
         <div class="sponsor-item">
           <img src="assets/images/sponsors/rad.png" alt="RAD" loading="lazy">
         </div>
@@ -365,8 +379,7 @@
         <div class="sponsor-item">
           <img src="assets/images/sponsors/institutv.jpeg" alt="Sponsor" loading="lazy">
         </div>
-        
-        <!-- Série 3 (triple duplication - IMPORTANT pour boucle infinie) -->
+
         <div class="sponsor-item">
           <img src="assets/images/sponsors/rad.png" alt="RAD" loading="lazy">
         </div>

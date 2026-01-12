@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>Run In Music – Course à pied musicale au Groupama Stadium</title>
+    <meta name="description" content="Participez à Run In Music, une course à pied unique de 1 à 28 km rythmée par des ambiances musicales au Groupama Stadium. Inscription 2027." />
+    <meta name="keywords" content="course à pied, run, musique, Lyon, Groupama Stadium, running, marathon, sport, concert" />
+    <meta name="author" content="Run In Music" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Run In Music – Course à pied musicale" />
+    <meta property="og:description" content="Une expérience unique : course à pied de 1 à 28 km rythmée par la musique avec un concert final au Groupama Stadium." />
+    <meta property="og:image" content="assets/images/hero.jpeg" />
+    <meta property="og:url" content="https://runinmusic.fr" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Run In Music – Course à pied musicale" />
+    <meta name="twitter:description" content="Courir. Vibrer. Danser. Une course unique rythmée par la musique au Groupama Stadium." />
+    <meta name="twitter:image" content="assets/images/hero.jpeg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#6B3CFF" />
+
+    <!-- Preconnect -->
+    <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
+
+    <link rel="stylesheet" href="assets/css/style2.css">
+  </head>
+
+  <body>
+    <!-- Navigation avec effet glassmorphism -->
+    <header>
+      <a href="#" class="logo-link">
+        <img src="assets/images/logo.webp" alt="Logo Run In Music" />
+      </a>
+      <button class="burger-menu" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-menu">
+        <a href="#concept" class="nav-link">Le concept</a>
+        <a href="#courses" class="nav-link">Les courses</a>
+        <a href="/sponsors.html" class="nav-link">Les sponsors</a>
+        <a href="/contact.html" class="nav-link">Contact</a>
+        <a class="cta-btn" href="#preinscription">Pré-inscription</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section avec overlay dynamique -->
+      <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="word word-1">Courir.</span>
+            <span class="word word-2">Vibrer.</span>
+            <span class="word word-3">Danser.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Une expérience unique où la musique rythme chaque foulée
+          </p>
+          
+          <!-- Countdown avec design néomorphique -->
+          <div id="countdown">
+            <div class="count-block">
+              <div class="count-number" id="cd-days">0</div>
+              <div class="count-label">Jours</div>
+            </div>
+            <div class="count-block">
+              <div class="count-number" id="cd-hours">0</div>
+              <div class="count-label">Heures</div>
+            </div>
+            <div class="count-block">
+              <div class="count-number" id="cd-minutes">0</div>
+              <div class="count-label">Min</div>
+            </div>
+            <div class="count-block">
+              <div class="count-number" id="cd-seconds">0</div>
+              <div class="count-label">Sec</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Concept Section avec cartes animées -->
+      <section class="concept" id="concept">
+        <div class="concept-grid">
+          
+          <div class="concept-card fade-in">
+            <div class="card-number">01</div>
+            <div class="concept-image">
+              <img src="assets/images/Gemini_Generated_Image_cu8gglcu8gglcu8g.webp" alt="Vue d'ensemble de la course" width="600" height="400" loading="lazy">
+              <div class="image-overlay"></div>
+            </div>
+            <div class="concept-text">
+              <h2>Pourquoi Run In Music ?</h2>
+              <p>
+                Run In Music transforme une course à pied en expérience immersive au cœur d'OL Vallée. Chaque foulée vibre au rythme de la musique dans un lieu emblématique entre modernité, sport et convivialité.
+              </p>
+            </div>
+          </div>
+
+          <div class="concept-card reverse fade-in">
+            <div class="card-number">02</div>
+            <div class="concept-image">
+              <img src="assets/images/Runlac.webp" alt="Coureur en pleine action" width="600" height="400" loading="lazy">
+              <div class="image-overlay"></div>
+            </div>
+            <div class="concept-text">
+              <h2>Le concept</h2>
+              <p>
+                Mêler l'énergie du sport à l'émotion de la musique. Un événement ouvert à tous — du 5 km familial au 28 km exigeant — avec une arrivée portée par un concert final au Groupama Stadium.
+              </p>
+            </div>
+          </div>
+
+          <div class="concept-card fade-in">
+            <div class="card-number">03</div>
+            <div class="concept-image">
+              <img src="assets/images/olvalleerun.webp" alt="Concert à l'arrivée" width="600" height="400" loading="lazy">
+              <div class="image-overlay"></div>
+            </div>
+            <div class="concept-text">
+              <h2>L'objectif</h2>
+              <p>
+                Créer un événement accessible, festif et ambitieux à Décines-Charpieu où sport, musique et communauté se rencontrent. Une expérience vive, inclusive et hors norme dans un cadre unique.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Courses Section avec design moderne -->
+      <section class="courses" id="courses">
+        <h2 class="section-title">Découvrez les parcours</h2>
+        
+        <div class="course-grid">
+          
+          <!-- 1 KM -->
+          <div class="course-card fade-in" data-distance="1km">
+            <div class="course-header">
+              <span class="course-badge">1 km</span>
+              <h3>La course des petits gones</h3>
+            </div>
+            <p class="course-description">
+              Une boucle autour du Groupama Stadium pour initier les plus petits aux joies de la course !
+            </p>
+            <div class="course-media">
+              <div class="video-container">
+                <div class="lite-youtube" data-id="v9VuZS35qzA" data-title="Vidéo parcours 1 km"></div>
+              </div>
+            </div>
+            <div class="course-details">
+              <div class="detail-item">
+                <span class="detail-icon">⏰</span>
+                <span class="detail-text">Départ: 10h</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">📍</span>
+                <span class="detail-text">Groupama Stadium</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">💧</span>
+                <span class="detail-text">Ravitaillement: 500m</span>
+              </div>
+            </div>
+            <a href="#preinscription" class="course-cta">Pré-inscription</a>
+          </div>
+
+          <!-- 5 KM -->
+          <div class="course-card fade-in" data-distance="5km">
+            <div class="course-header">
+              <span class="course-badge">5 km</span>
+              <h3>Le parcours du coeur</h3>
+            </div>
+            <p class="course-description">
+              Parcours court et fun, idéal pour les familles. Une boucle facile pour s'échauffer en musique !
+            </p>
+            <div class="course-media">
+              <div class="video-container">
+                <div class="lite-youtube" data-id="v9VuZS35qzA" data-title="Vidéo parcours 5 km"></div>
+              </div>
+            </div>
+            <div class="course-details">
+              <div class="detail-item">
+                <span class="detail-icon">⏰</span>
+                <span class="detail-text">Départ: 10h30</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">📍</span>
+                <span class="detail-text">Groupama Stadium</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">💧</span>
+                <span class="detail-text">Ravitaillement: 2.5 km</span>
+              </div>
+            </div>
+            <a href="#preinscription" class="course-cta">Pré-inscription</a>
+          </div>
+
+          <!-- 12 KM -->
+          <div class="course-card fade-in" data-distance="12km">
+            <div class="course-header">
+              <span class="course-badge">12 km</span>
+              <h3>Le challenge rythmé</h3>
+            </div>
+            <p class="course-description">
+              Le run parfait pour se challenger. Une boucle rythmée par plusieurs ambiances musicales.
+            </p>
+            <div class="course-media">
+              <div class="video-container">
+                <div class="lite-youtube" data-id="v9VuZS35qzA" data-title="Vidéo parcours 12 km"></div>
+              </div>
+            </div>
+            <div class="course-details">
+              <div class="detail-item">
+                <span class="detail-icon">⏰</span>
+                <span class="detail-text">Départ: 12h00</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">📍</span>
+                <span class="detail-text">Groupama Stadium</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">💧</span>
+                <span class="detail-text">Ravitaillement: 4km, 8km</span>
+              </div>
+            </div>
+            <a href="#preinscription" class="course-cta">Pré-inscription</a>
+          </div>
+
+          <!-- 28 KM -->
+          <div class="course-card fade-in" data-distance="28km">
+            <div class="course-header">
+              <span class="course-badge">28 km</span>
+              <h3>Le défi spectaculaire</h3>
+            </div>
+            <p class="course-description">
+              Pour les coureurs expérimentés. Un tracé exigeant avec un final spectaculaire.
+            </p>
+            <div class="course-media">
+              <div class="video-container">
+                <div class="lite-youtube" data-id="v9VuZS35qzA" data-title="Vidéo parcours 28 km"></div>
+              </div>
+            </div>
+            <div class="course-details">
+              <div class="detail-item">
+                <span class="detail-icon">⏰</span>
+                <span class="detail-text">Départ: 14h00</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">📍</span>
+                <span class="detail-text">Groupama Stadium</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">💧</span>
+                <span class="detail-text">Ravitaillement: 7km, 14km, 21km</span>
+              </div>
+            </div>
+            <a href="#preinscription" class="course-cta">Pré-inscription</a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Pre-inscription Section avec design moderne -->
+      <section id="preinscription">
+        <div class="preinscription-container">
+          <h2>Pré‑inscription 2027</h2>
+          <p class="subtitle">Soyez averti en priorité de l'ouverture des inscriptions</p>
+
+          <form class="preinscription-form" id="preinscriptionForm" action="/traitement_inscription.php" method="POST">
+
+            <div style="display:none;" aria-hidden="true">
+              <label for="spam_check">Veuillez laisser ce champ vide</label>
+              <input type="text" name="spam_check" id="spam_check" tabindex="-1">
+            </div>
+
+            <div class="form-group">
+              <label for="nom">Nom complet</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom" required aria-required="true">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Adresse Email</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.com" required aria-required="true">
+            </div>
+
+            <div class="form-group">
+              <label for="telephone">Téléphone (optionnel)</label>
+              <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78">
+            </div>
+
+            <div class="form-group">
+              <label for="course">Choisir une course</label>
+              <select id="course" name="course" required aria-required="true">
+                <option value="" disabled selected>Je suis intéressé par...</option>
+                <option value="1km">1 km - enfant</option>
+                <option value="5km">5 km - Familial</option>
+                <option value="12km">12 km - Challenge</option>
+                <option value="28km">28 km - Défi</option>
+              </select>
+            </div>
+
+            <button type="submit" class="cta-btn">Valider ma pré-inscription</button>
+          </form>
+
+          <div id="form-message" class="form-message"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sponsors Ticker -->
+    <div class="sponsors-ticker">
+      <div class="sponsors-ticker-track">
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/rad.png" alt="RAD" loading="lazy">
+        </div>
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/logoradioscoop.png" alt="Radio Scoop" loading="lazy">
+        </div>
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/mingat.png" alt="Sponsor" loading="lazy">
+        </div>
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/institutv.jpeg" alt="Sponsor" loading="lazy">
+        </div>
+        
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/rad.png" alt="RAD" loading="lazy">
+        </div>
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/logoradioscoop.png" alt="Radio Scoop" loading="lazy">
+        </div>
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/mingat.png" alt="Sponsor" loading="lazy">
+        </div>
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/institutv.jpeg" alt="Sponsor" loading="lazy">
+        </div>
+        
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/rad.png" alt="RAD" loading="lazy">
+        </div>
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/logoradioscoop.png" alt="Radio Scoop" loading="lazy">
+        </div>
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/mingat.png" alt="Sponsor" loading="lazy">
+        </div>
+        <div class="sponsor-item">
+          <img src="assets/images/sponsors/institutv.jpeg" alt="Sponsor" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/images/logo.webp" alt="Logo Run In Music" loading="lazy">
+        </div>
+        <div class="footer-links">
+          <a href="#courses">Les Courses</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/mentions-legales.html">Mentions Légales</a>
+        </div>
+        <div class="footer-social">
+          <p>Suivez-nous</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon fb" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="20" height="20" fill="currentColor"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/runinmusic/" class="social-icon ig" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            </a>
+            <a href="#" class="social-icon tk" aria-label="Tiktok">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" fill="currentColor"><path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/run-in-music/about/?viewAsMember=true" class="social-icon li" aria-label="Linkedin">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" fill="currentColor"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Run In Music. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/countdown.js" defer></script>
+    <script src="assets/js/form.js" defer></script>
+    <script src="assets/js/menu.js" defer></script>
+    <script src="assets/js/animations.js" defer></script>
+    <script src="assets/js/player.js" defer></script>
+    <script src="assets/js/lite-youtube.js" defer></script>
+  </body>
+</html>
