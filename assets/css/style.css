@@ -848,135 +848,127 @@ nav {
 }
 
 
-/* --- SECTION PRE-INSCRIPTION --- */
+/* ============================================
+   PRE-INSCRIPTION SECTION
+   ============================================ */
 #preinscription {
-  width: 100%;
-  padding: 40px 0px;
+  padding: var(--spacing-xl) var(--spacing-md);
+  background: var(--light);
+}
+
+.preinscription-container {
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
 }
 
 #preinscription h2 {
-  font-size: 2.5rem;
-  background: linear-gradient(135deg, #6B3CFF 0%, #FF3E9D 50%, #FF8A00 100%);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: var(--gradient-1);
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
-  margin-bottom: 10px;
+  -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
   font-size: 1.1rem;
   color: #666;
-  margin-bottom: 40px;
+  margin-bottom: 3rem;
 }
 
 .preinscription-form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  background: #fcfcfc;
+  background: white;
+  padding: 3rem;
+  border-radius: 25px;
+  box-shadow: var(--shadow-lg);
 }
 
 .form-group {
-  margin-bottom: 20px;
-  text-align: left; /* Aligne le contenu du groupe à gauche */
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   font-weight: 600;
-  color: #333;
+  color: var(--dark);
   font-size: 0.95rem;
 }
 
-.form-group input{
-  box-sizing: border-box;
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid #E0E0E0;
+  border-radius: 15px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-/* Style commun pour les inputs et le select */
-  .preinscription-form input[type="text"],
-  .preinscription-form input[type="email"],
-  .preinscription-form input[type="tel"], /* Ajout du style pour le type tel */
-  .preinscription-form select {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(107, 60, 255, 0.1);
+}
+
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236B3CFF'%3E%3Cpath d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem top 50%;
+  background-size: 20px;
+}
+
+.form-message {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 15px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.form-message.success {
+  background: #E8F5E9;
+  color: #2E7D32;
+  border: 2px solid #4CAF50;
+  opacity: 1;
+}
+
+.form-message.error {
+  background: #FFEBEE;
+  color: #C62828;
+  border: 2px solid #F44336;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .preinscription-form {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #preinscription {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .preinscription-form {
+    padding: 2rem 1.5rem;
+  }
+
+  .subtitle {
     font-size: 1rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    -webkit-appearance: none; 
-    -moz-appearance: none;
-    appearance: none;
-    background-color: #fff;
-    color: #444;
+    margin-bottom: 2rem;
+  }
 }
-
-        .preinscription-form input:focus,
-        .preinscription-form select:focus {
-            border-color: #d63384; 
-            box-shadow: 0 0 0 3px rgba(214, 51, 132, 0.2);
-            outline: none;
-        }
-
-        /* Style spécifique pour le select pour simuler une flèche (SVG encodé) */
-        .form-group select {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23666'%3E%3Cpath d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 10px top 50%;
-            background-size: 16px;
-        }
-
-        /* --- STYLE DU MESSAGE DE FORMULAIRE --- */
-        .form-message {
-            margin-top: 20px;
-            padding: 10px 15px;
-            border-radius: 6px;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 0.95rem;
-            font-weight: 600;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .form-message.error {
-            background-color: #fce8e8;
-            color: #cc0000;
-            border: 1px solid #cc0000;
-            opacity: 1; 
-        }
-
-        .form-message.success {
-            background-color: #e8fce8;
-            color: #008800;
-            border: 1px solid #008800;
-            opacity: 1;
-        }
-
-        /* --- MOBILE ADAPTATION --- */
-        @media (max-width: 576px) { 
-          #preinscription{
-            padding: 0 20px;
-            width: 90%;
-          }
-          
-          #preinscription p{
-            text-align: justify;
-          }
-
-          .preinscription-form {
-            max-width: 95%;
-            padding: 20px;
-          }
-          .subtitle {
-            font-size: 1rem;
-            margin-bottom: 25px;
-          }
-        }
 
 
 /* ============================================
