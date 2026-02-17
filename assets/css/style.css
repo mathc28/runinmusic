@@ -219,14 +219,14 @@ nav {
 .cta-btn {
   padding: 0.75rem 1.5rem;
   background: var(--primary);
-  color: white;
+  color: var(--dark);
   text-decoration: none;
   border-radius: 50px;
   font-weight: 700;
   font-size: 0.95rem;
   border: none;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: background 0.4s ease, color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: var(--shadow-md);
 }
 
@@ -234,6 +234,7 @@ nav {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
   background: var(--secondary);
+  color: white;
 }
 
 .cta-btn:active {
@@ -374,7 +375,7 @@ nav {
 .hero-description {
   font-size: 1.15rem;
   line-height: 1.8;
-  color: #666;
+  color: black;
   margin-bottom: 3rem;
   transition: var(--transition-smooth);
 }
@@ -390,7 +391,7 @@ nav {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #999;
+  color: black;
   margin-bottom: 1rem;
 }
 
@@ -427,7 +428,7 @@ nav {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #999;
+  color: black;
   margin-top: 0.5rem;
 }
 
@@ -441,12 +442,12 @@ nav {
 .btn-primary {
   padding: 1.2rem 2.5rem;
   background: var(--primary);
-  color: white;
+  color: var(--dark);
   text-decoration: none;
   border-radius: 50px;
   font-weight: 700;
   font-size: 1rem;
-  transition: var(--transition-smooth);
+  transition: background 0.4s ease, color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 10px 30px rgba(231, 96, 11, 0.3);
   display: inline-block;
 }
@@ -455,6 +456,7 @@ nav {
   transform: translateY(-3px);
   box-shadow: 0 15px 40px rgba(231, 96, 11, 0.5);
   background: var(--secondary);
+  color: white;
 }
 
 .btn-primary:active {
@@ -471,7 +473,7 @@ nav {
   font-weight: 700;
   font-size: 1rem;
   border: 2px solid var(--secondary);
-  transition: var(--transition-smooth);
+  transition: background 0.4s ease, color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
   display: inline-block;
 }
 
