@@ -20,17 +20,12 @@ body {
 }
 
 :root {
-  /* Palette de couleurs audacieuse */
-  --primary: #6B3CFF;
-  --secondary: #FF3E9D;
-  --accent: #00D9FF;
-  --dark: #0A0E27;
-  --light: #F8F9FF;
-  --gradient-1: linear-gradient(135deg, #6B3CFF 0%, #FF3E9D 100%);
-  --gradient-2: linear-gradient(135deg, #FF3E9D 0%, #FF8A00 100%);
-  --gradient-3: linear-gradient(135deg, #00D9FF 0%, #6B3CFF 100%);
-  --gradient-hero: linear-gradient(90deg, #0066ff 0%, #9b35ff 25%, #ff6600 50%);
-  --gradient-logo: linear-gradient(90deg, #0066ff 0%, #9b35ff 12%, #ff6600 25%);
+  /* Palette de couleurs - Orange #e7600b */
+  --primary: #f25c05;
+  --secondary: #0477bf;
+  --accent: #e7a00b;
+  --dark: #2d2d2d;
+  --light: #faf8f5;
 
   /* Typography */
   --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -43,10 +38,10 @@ body {
   --spacing-xl: 6rem;
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(107, 60, 255, 0.1);
-  --shadow-md: 0 8px 24px rgba(107, 60, 255, 0.15);
-  --shadow-lg: 0 16px 48px rgba(107, 60, 255, 0.2);
-  --shadow-neon: 0 0 20px rgba(107, 60, 255, 0.6);
+  --shadow-sm: 0 2px 8px rgba(231, 96, 11, 0.1);
+  --shadow-md: 0 8px 24px rgba(231, 96, 11, 0.15);
+  --shadow-lg: 0 16px 48px rgba(231, 96, 11, 0.2);
+  --shadow-neon: 0 0 20px rgba(231, 96, 11, 0.6);
 
   /* Transitions fluides */
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -171,7 +166,7 @@ header {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(107, 60, 255, 0.1);
+  border-bottom: 1px solid rgba(231, 96, 11, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -209,7 +204,7 @@ nav {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--gradient-1);
+  background: var(--primary);
   transition: var(--transition-base);
 }
 
@@ -223,8 +218,7 @@ nav {
 
 .cta-btn {
   padding: 0.75rem 1.5rem;
-  background: var(--gradient-hero);
-  background-size: 200% 200%;
+  background: var(--primary);
   color: white;
   text-decoration: none;
   border-radius: 50px;
@@ -239,7 +233,7 @@ nav {
 .cta-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
-  animation: gradientShift 3s ease infinite;
+  background: var(--secondary);
 }
 
 .cta-btn:active {
@@ -264,7 +258,7 @@ nav {
 }
 
 .burger-menu:hover {
-  background: rgba(107, 60, 255, 0.08);
+  background: rgba(231, 96, 11, 0.08);
 }
 
 .burger-menu:active {
@@ -346,7 +340,7 @@ nav {
   color: var(--primary);
   margin-bottom: 2rem;
   padding: 0.5rem 1rem;
-  background: rgba(107, 60, 255, 0.1);
+  background: rgba(231, 96, 11, 0.1);
   border-radius: 50px;
 }
 
@@ -357,7 +351,7 @@ nav {
   text-align: center;
   white-space: nowrap;
   width: max-content;
-  font-family: r;
+  font-family: var(--font-main);
   transition: var(--transition-smooth);
 }
 
@@ -371,13 +365,9 @@ nav {
 
 .hero-title-sub {
   display: block;
-  font-size: clamp(4rem, 10vw, 7rem);
+  font-size: clamp(4rem, 10vw, 5rem);
   font-weight: 900;
-  background: var(--gradient-logo);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary);
   line-height: 1;
 }
 
@@ -412,7 +402,7 @@ nav {
 }
 
 .countdown-box {
-  background: rgba(107, 60, 255, 0.05);
+  background: rgba(231, 96, 11, 0.05);
   border-radius: 15px;
   padding: 1.5rem 1rem;
   text-align: center;
@@ -420,14 +410,14 @@ nav {
 }
 
 .countdown-box:hover {
-  background: rgba(107, 60, 255, 0.1);
+  background: rgba(231, 96, 11, 0.1);
   transform: translateY(-3px) scale(1.02);
 }
 
 .countdown-number {
   font-size: 2.5rem;
   font-weight: 900;
-  color: var(--primary);
+  color: var(--secondary);
   line-height: 1;
   font-variant-numeric: tabular-nums;
 }
@@ -450,47 +440,46 @@ nav {
 
 .btn-primary {
   padding: 1.2rem 2.5rem;
-  background: var(--gradient-hero);
-  background-size: 200% 200%;
+  background: var(--primary);
   color: white;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 700;
   font-size: 1rem;
   transition: var(--transition-smooth);
-  box-shadow: 0 10px 30px rgba(107, 60, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(231, 96, 11, 0.3);
   display: inline-block;
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(107, 60, 255, 0.5);
-  animation: gradientShift 5s ease infinite;
+  box-shadow: 0 15px 40px rgba(231, 96, 11, 0.5);
+  background: var(--secondary);
 }
 
 .btn-primary:active {
   transform: translateY(-1px);
-  box-shadow: 0 8px 25px rgba(107, 60, 255, 0.4);
+  box-shadow: 0 8px 25px rgba(231, 96, 11, 0.4);
 }
 
 .btn-outline {
   padding: 1.2rem 2.5rem;
   background: transparent;
-  color: var(--primary);
+  color: var(--secondary);
   text-decoration: none;
   border-radius: 50px;
   font-weight: 700;
   font-size: 1rem;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--secondary);
   transition: var(--transition-smooth);
   display: inline-block;
 }
 
 .btn-outline:hover {
-  background: var(--primary);
+  background: var(--secondary);
   color: white;
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(107, 60, 255, 0.25);
+  box-shadow: 0 10px 30px rgba(26, 42, 74, 0.25);
 }
 
 .btn-outline:active {
@@ -518,12 +507,12 @@ nav {
     90deg,
     rgba(255, 255, 255, 1) 0%,
     rgba(255, 255, 255, 0) 30%,
-    rgba(107, 60, 255, 0.2) 100%
+    rgba(231, 96, 11, 0.15) 100%
   );
 }
 
 .cta {
-  background: linear-gradient(135deg, #6B3CFF 0%, #FF3E9D 50%, #FF8A00 100%);
+  background: var(--primary);
   color: white;
   padding: 15px 20px;
   border-radius: 20px;
@@ -532,12 +521,13 @@ nav {
   font-size: 1.2rem;
   font-weight: bold;
   border: none;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 .cta:hover {
+  background: var(--secondary);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(107, 60, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(231, 96, 11, 0.3);
 }
 
 
@@ -556,7 +546,7 @@ nav {
   }
 
   .hero-title-sub {
-    font-size: clamp(3.5rem, 8vw, 5.5rem);
+    font-size: clamp(3.5rem, 8vw, 4rem);
   }
 
   .hero-description {
@@ -597,7 +587,7 @@ nav {
   }
 
   .hero-title-sub {
-    font-size: clamp(3rem, 7vw, 4.5rem);
+    font-size: clamp(3rem, 7vw, 3rem);
   }
 
   .hero-description {
@@ -765,7 +755,7 @@ nav {
   }
 
   .hero-title-sub {
-    font-size: clamp(2.5rem, 10vw, 4rem);
+    font-size: clamp(2.5rem, 10vw, 3rem);
   }
 
   .hero-description {
@@ -923,10 +913,7 @@ nav {
 .concept-text h2 {
   font-size: 2.2rem;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #6B3CFF 0%, #FF3E9D 50%, #FF8A00 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--secondary);
 }
 
 .concept-text p {
@@ -959,7 +946,7 @@ nav {
 .image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #6B3CFF 0%, #FF3E9D 100%);
+  background: var(--primary);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -1061,18 +1048,14 @@ nav {
 .courses {
     padding: var(--spacing-xl) var(--spacing-md);
     text-align: center;
-    background: linear-gradient(180deg, var(--light) 0%, #E8E5FF 100%);
+    background: var(--light);
 }
 
 .courses h2 {
   margin-bottom: 4rem;
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
-  background: var(--gradient-hero);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--secondary);
 }
 
 .course-list {
@@ -1103,25 +1086,7 @@ nav {
   left: 0;
   right: 0;
   height: 5px;
-  background: var(--gradient-1);
-}
-
-.course-detail[data-distance="1km"]::before {
-  background: linear-gradient(135deg, #6B3CFF 0%, #00D9FF 100%);
-}
-
-.course-detail[data-distance="5km"]::before {
-  background: var(--gradient-2);
-}
-
-.course-detail[data-distance="12km"]::before {
-  background: var(--gradient-3);
-}
-
-.course-detail[data-distance="28km"]::before {
-  background: var(--gradient-hero);
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite;
+  background: var(--primary);
 }
 
 .course-detail:hover {
@@ -1138,31 +1103,13 @@ nav {
   top: 2rem;
   right: 2rem;
   padding: 0.5rem 1.5rem;
-  background: var(--gradient-1);
+  background: var(--secondary);
   color: white;
   border-radius: 50px;
   font-weight: 700;
   font-size: 0.9rem;
   box-shadow: var(--shadow-sm);
   z-index: 2;
-}
-
-.course-detail[data-distance="1km"] .course-badge {
-  background: linear-gradient(135deg, #6B3CFF 0%, #00D9FF 100%);
-}
-
-.course-detail[data-distance="5km"] .course-badge {
-  background: var(--gradient-2);
-}
-
-.course-detail[data-distance="12km"] .course-badge {
-  background: var(--gradient-3);
-}
-
-.course-detail[data-distance="28km"] .course-badge {
-  background: var(--gradient-hero);
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite;
 }
 
 .course-text-content {
@@ -1178,10 +1125,7 @@ nav {
   font-weight: 800;
   margin-top: 0;
   margin-bottom: 1rem;
-  background: var(--gradient-1);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--secondary);
 }
 
 .course-description {
@@ -1219,7 +1163,7 @@ nav {
 
 /* Info run details */
 .inforun {
-    background: rgba(107, 60, 255, 0.05);
+    background: rgba(231, 96, 11, 0.05);
     border-radius: 20px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
@@ -1273,8 +1217,7 @@ nav {
 .cta-small {
   display: block;
   width: 100%;
-  background: var(--gradient-1);
-  background-size: 200% 200%;
+  background: var(--primary);
   color: white;
   text-decoration: none;
   text-align: center;
@@ -1283,12 +1226,12 @@ nav {
   font-weight: 700;
   font-size: 0.95rem;
   transition: all 0.3s ease;
-  animation: gradientShift 3s ease infinite;
 }
 
 .cta-small:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+  background: var(--secondary);
 }
 
 
@@ -1503,10 +1446,7 @@ nav {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
   margin-bottom: 1rem;
-  background: var(--gradient-1);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--secondary);
 }
 
 .subtitle {
@@ -1558,7 +1498,7 @@ nav {
 .form-group select:focus {
   border-color: var(--primary);
   outline: none;
-  box-shadow: 0 0 0 4px rgba(107, 60, 255, 0.1);
+  box-shadow: 0 0 0 4px rgba(231, 96, 11, 0.1);
 }
 
 .form-group input::placeholder {
@@ -1571,7 +1511,7 @@ nav {
 }
 
 .form-group select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236B3CFF'%3E%3Cpath d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23e7600b'%3E%3Cpath d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem top 50%;
   background-size: 20px;
@@ -1670,8 +1610,8 @@ nav {
   background: white;
   padding: 3rem 0;
   overflow: hidden;
-  border-top: 1px solid rgba(107, 60, 255, 0.1);
-  border-bottom: 1px solid rgba(107, 60, 255, 0.1);
+  border-top: 1px solid rgba(231, 96, 11, 0.1);
+  border-bottom: 1px solid rgba(231, 96, 11, 0.1);
 }
 
 .sponsors-ticker-track {
@@ -1777,7 +1717,7 @@ nav {
     max-width: 1200px; /* Adaptez à la largeur maximale de votre site */
     margin: 0 auto;
     padding: 0 20px 20px;
-    border-bottom: 2px solid #6B3CFF; /* Ligne de séparation colorée (Accent Violet) */
+    border-bottom: 2px solid #e7600b; /* Ligne de séparation colorée (Orange) */
     margin-bottom: 20px;
 }
 
@@ -1796,7 +1736,7 @@ nav {
 }
 
 .footer-links a:hover {
-    color: #3498db; /* Utilisation de la couleur d'accent au survol */
+    color: var(--primary);
 }
 
 /* --- RÉSEAUX SOCIAUX --- */
