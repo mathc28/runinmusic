@@ -370,34 +370,6 @@ nav {
   animation: fadeInUp 1s ease forwards;
 }
 
-/* Badge lieu / date */
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.82);
-  margin-bottom: 2rem;
-  padding: 0.5rem 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 50px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.hero-badge-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--primary);
-  flex-shrink: 0;
-  animation: heroPulse 2.5s ease-in-out infinite;
-}
-
 /* Titre */
 .hero-title {
   margin-bottom: 1.5rem;
@@ -544,23 +516,6 @@ nav {
 
 .btn-hero-outline:active {
   transform: translateY(-1px);
-}
-
-/* Indicateur de scroll */
-.hero-scroll {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.hero-scroll-line {
-  width: 2px;
-  height: 58px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.65), transparent);
-  margin: 0 auto;
-  animation: heroScrollLine 2.5s ease-in-out infinite;
 }
 
 
@@ -768,9 +723,6 @@ nav {
     padding: 1rem 2rem;
   }
 
-  .hero-scroll {
-    display: none;
-  }
 }
 
 /* --- MOBILE BREAKPOINT (480px) --- */
